@@ -1,0 +1,9 @@
+{
+  "theme": "light",
+  "pinnedMessage": null,
+  "chatLocked": false,
+  "autoMod": {
+    "maxMessages": 10
+  },
+  "groups": {}
+}

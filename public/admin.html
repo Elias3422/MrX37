@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Bereich</title>
+    <script>
+        function banUser() {
+            const username = prompt("Welchen Benutzer bannen?");
+            fetch("/ban", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
+                .then(res => res.json()).then(data => alert(data.message));
+        }
+
+        function unbanUser() {
+            const username = prompt("Welchen Benutzer entbannen?");
+            fetch("/unban", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
+                .then(res => res.json()).then(data => alert(data.message));
+        }
+    </script>
+</head>
+<body>
+    <h1>Admin-Bereich</h1>
+    <button onclick="banUser()">Benutzer bannen</button>
+    <button onclick="unbanUser()">Benutzer entbannen</button>
+</body>
+</html>

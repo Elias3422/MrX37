@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="chat.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Chat</h2>
+        <div id="pinned-message" class="pinned"></div>
+        <div id="chat-box" class="chat-box"></div>
+        <div class="input-area">
+            <input type="text" id="message" placeholder="Nachricht">
+            <button onclick="sendMessage()">Senden</button>
+        </div>
+
+        <div id="admin-panel" class="admin-panel" style="display:none;">
+            <h3>Admin Panel</h3>
+            <input type="text" id="manage-user" placeholder="Benutzername">
+            <div class="admin-buttons">
+                <button onclick="banUser()">Bannen</button>
+                <button onclick="unbanUser()">Entbannen</button>
+                <button onclick="muteUser()">Stumm</button>
+                <button onclick="unmuteUser()">Entstummen</button>
+                <button onclick="tempBanUser()">Temp-Ban</button>
+                <button onclick="timeoutUser()">Timeout</button>
+                <button onclick="deleteUser()">Löschen</button>
+                <button onclick="renameUser()">Umbenennen</button>
+                <button onclick="changePassword()">Passwort ändern</button>
+                <button onclick="ipBanUser()">IP-Bann</button>
+                <button onclick="addTag()">Tag hinzufügen</button>
+                <button onclick="verifyUser()">Verifizieren</button>
+            </div>
+
+            <h4>Neuen Benutzer hinzufügen</h4>
+            <input type="text" id="new-username" placeholder="Neuer Benutzername">
+            <input type="password" id="new-password" placeholder="Passwort">
+            <select id="new-role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button onclick="addUser()">Hinzufügen</button>
+
+            <h4>Rolle ändern</h4>
+            <select id="change-role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button onclick="changeRole()">Rolle ändern</button>
+
+            <h4>Nachricht bearbeiten</h4>
+            <input type="number" id="message-id" placeholder="Nachrichten-ID">
+            <input type="text" id="new-content" placeholder="Neuer Inhalt">
+            <button onclick="editMessage()">Bearbeiten</button>
+            <button onclick="censorMessage()">Zensieren</button>
+            <button onclick="pinMessage()">Anpinnen</button>
+
+            <h4>Ankündigung</h4>
+            <input type="text" id="announcement" placeholder="Ankündigung">
+            <button onclick="sendAnnouncement()">Senden</button>
+
+            <h4>Private Nachricht</h4>
+            <input type="text" id="private-message" placeholder="Private Nachricht">
+            <button onclick="sendPrivateMessage()">Senden</button>
+
+            <h4>Gruppenverwaltung</h4>
+            <input type="text" id="group-name" placeholder="Gruppenname">
+            <button onclick="createGroup()">Gruppe erstellen</button>
+            <button onclick="assignGroup()">Zuweisen</button>
+
+            <h4>Chat-Verwaltung</h4>
+            <button onclick="clearChat()">Chat leeren</button>
+            <button onclick="lockChat()">Chat sperren</button>
+            <button onclick="unlockChat()">Chat entsperren</button>
+            <button onclick="exportMessages()">Nachrichten exportieren</button>
+
+            <h4>Thema ändern</h4>
+            <select id="theme">
+                <option value="light">Hell</option>
+                <option value="dark">Dunkel</option>
+            </select>
+            <button onclick="changeTheme()">Ändern</button>
+
+            <h4>Auto-Mod</h4>
+            <input type="number" id="max-messages" placeholder="Max Nachrichten">
+            <button onclick="setAutoMod()">Setzen</button>
+
+            <h4>Nachrichten suchen</h4>
+            <input type="text" id="search-query" placeholder="Suchbegriff">
+            <button onclick="searchMessages()">Suchen</button>
+
+            <h4>Bot-Befehl</h4>
+            <input type="text" id="bot-command" placeholder="Bot-Befehl">
+            <button onclick="sendBotCommand()">Senden</button>
+
+            <h4>Timer setzen</h4>
+            <input type="number" id="timer-duration" placeholder="Minuten">
+            <button onclick="setTimer()">Setzen</button>
+
+            <h4>Weitere Aktionen</h4>
+            <button onclick="showUserInfo()">Benutzer-Info</button>
+            <button onclick="showStats()">Statistiken</button>
+            <button onclick="addNote()">Notiz hinzufügen</button>
+            <button onclick="importUsers()">Benutzer importieren</button>
+
+            <h4>Nutzerliste (Online/Offline)</h4>
+            <div id="users-status" class="user-list"></div>
+
+            <h4>Benutzerliste</h4>
+            <div id="user-list" class="user-list"></div>
+
+            <h4>Admin-Logs</h4>
+            <div id="admin-logs" class="logs"></div>
+        </div>
+    </div>
+</body>
+</html>
