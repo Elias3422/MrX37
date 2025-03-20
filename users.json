@@ -1,16 +1,43 @@
 {
+  "1": {
+    "password": "1",
+    "role": "user",
+    "banned": false,
+    "group": null,
+    "tags": [],
+    "notes": [],
+    "lastIp": "::ffff:127.0.0.1",
+    "loginHistory": [
+      "2025-03-20T16:02:55.520Z"
+    ],
+    "lastActivity": "2025-03-20T16:08:22.805Z"
+  },
   "admin": {
     "password": "1234",
     "role": "admin",
     "lastIp": "::ffff:127.0.0.1",
     "loginHistory": [
       "2025-03-20T15:37:50.396Z",
-      "2025-03-20T15:37:59.906Z"
+      "2025-03-20T15:37:59.906Z",
+      "2025-03-20T16:01:56.740Z"
     ],
-    "lastActivity": "2025-03-20T15:53:44.114Z"
+    "lastActivity": "2025-03-20T16:03:16.213Z"
   },
   "user1": {
     "password": "userPasswort",
     "role": "user"
+  },
+  "e": {
+    "password": "e",
+    "role": "user",
+    "banned": false,
+    "group": null,
+    "tags": [],
+    "notes": [],
+    "lastIp": "::ffff:127.0.0.1",
+    "loginHistory": [
+      "2025-03-20T16:10:39.925Z"
+    ],
+    "lastActivity": "2025-03-20T16:11:10.633Z"
   }
 }

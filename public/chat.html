@@ -95,56 +95,85 @@
         .admin-section {
             margin-bottom: 20px;
             background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 15px;
+            border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         .admin-section h4 {
             margin: 0 0 10px;
-            color: #555;
-            font-size: 1em;
+            color: #444;
+            font-size: 1.1em;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-weight: 600;
         }
         .admin-section h4::after {
             content: "▼";
             font-size: 0.8em;
+            transition: transform 0.3s;
         }
         .admin-section.collapsed h4::after {
-            content: "▶";
+            transform: rotate(-90deg);
         }
         .admin-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            max-height: 200px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            max-height: 500px;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
         .admin-section.collapsed .admin-buttons {
             max-height: 0;
         }
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
         .admin-buttons button {
-            padding: 8px 16px;
+            padding: 10px 18px;
             background-color: #4caf50;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 0.9em;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.1s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         .admin-buttons button:hover {
             background-color: #388e3c;
+            transform: translateY(-2px);
+        }
+        .admin-buttons button:active {
+            transform: translateY(0);
         }
         .admin-buttons input, .admin-buttons select {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 0.9em;
-            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.95em;
+            flex: 1;
+            min-width: 100px;
+        }
+        .admin-buttons button.danger {
+            background-color: #d32f2f;
+        }
+        .admin-buttons button.danger:hover {
+            background-color: #b71c1c;
+        }
+        .admin-buttons button.secondary {
+            background-color: #1976d2;
+        }
+        .admin-buttons button.secondary:hover {
+            background-color: #115293;
         }
         #user-list ul {
             list-style: none;
@@ -152,17 +181,17 @@
             margin: 0;
         }
         #user-list li {
-            padding: 10px;
+            padding: 12px;
             margin: 5px 0;
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 6px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .status-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             display: inline-block;
             margin-left: 10px;
@@ -178,7 +207,7 @@
             background-color: #1e1e1e;
             color: #fff;
         }
-        .dark-mode .container {
+        .dark-mode .container, .dark-mode .admin-section, .dark-mode #user-list li {
             background-color: #2d2d2d;
         }
         .dark-mode .chat-header {
@@ -192,12 +221,6 @@
         }
         .dark-mode .sidebar {
             background-color: #252525;
-        }
-        .dark-mode .admin-section {
-            background-color: #333;
-        }
-        .dark-mode #user-list li {
-            background-color: #3c3c3c;
         }
         @media (max-width: 600px) {
             .container {
@@ -220,6 +243,12 @@
             }
             .admin-buttons {
                 grid-template-columns: 1fr;
+            }
+            .button-group {
+                flex-direction: column;
+            }
+            .admin-buttons input, .admin-buttons select {
+                width: 100%;
             }
         }
     </style>
@@ -246,52 +275,139 @@
                 <div class="admin-section">
                     <h4>Chat-Steuerung</h4>
                     <div class="admin-buttons">
-                        <button onclick="sayHello()">Hallo sagen</button>
-                        <button onclick="showTime()">Zeit anzeigen</button>
-                        <button onclick="clearChat()">Chat leeren</button>
-                        <button onclick="lockChat()">Chat sperren</button>
-                        <button onclick="unlockChat()">Chat entsperren</button>
+                        <div class="button-group"><button onclick="sayHello()">Hallo sagen</button></div>
+                        <div class="button-group"><button onclick="showTime()">Zeit anzeigen</button></div>
+                        <div class="button-group"><button class="danger" onclick="clearChat()">Chat leeren</button></div>
+                        <div class="button-group"><button class="danger" onclick="lockChat()">Chat sperren</button></div>
+                        <div class="button-group"><button onclick="unlockChat()">Chat entsperren</button></div>
                     </div>
                 </div>
                 <div class="admin-section">
                     <h4>Benutzerverwaltung</h4>
                     <div class="admin-buttons">
-                        <div><input id="add-user-name" placeholder="Name"><input id="add-user-pass" placeholder="Passwort"><select id="add-user-role"><option value="user">User</option><option value="admin">Admin</option></select><select id="add-user-group"><option value="">Keine</option></select><button onclick="addUser()">Hinzufügen</button></div>
-                        <div><input id="delete-user" placeholder="Benutzer löschen"><button onclick="deleteUser()">Löschen</button></div>
-                        <div><input id="ban-user" placeholder="Benutzer bannen"><button onclick="banUser()">Bannen</button></div>
-                        <div><input id="unban-user" placeholder="Benutzer entbannen"><button onclick="unbanUser()">Entbannen</button></div>
-                        <div><input id="mute-user" placeholder="Benutzer stummschalten"><button onclick="muteUser()">Stumm</button></div>
-                        <div><input id="unmute-user" placeholder="Benutzer entstummen"><button onclick="unmuteUser()">Entstumm</button></div>
+                        <div class="button-group">
+                            <input id="add-user-name" placeholder="Name">
+                            <input id="add-user-pass" placeholder="Passwort">
+                            <select id="add-user-role"><option value="user">User</option><option value="admin">Admin</option></select>
+                            <select id="add-user-group"><option value="">Keine</option></select>
+                            <button onclick="addUser()">Hinzufügen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="delete-user" placeholder="Benutzer löschen">
+                            <button class="danger" onclick="deleteUser()">Löschen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="ban-user" placeholder="Benutzer bannen">
+                            <button class="danger" onclick="banUser()">Bannen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="unban-user" placeholder="Benutzer entbannen">
+                            <button onclick="unbanUser()">Entbannen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="mute-user" placeholder="Benutzer stummschalten">
+                            <button class="danger" onclick="muteUser()">Stumm</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="unmute-user" placeholder="Benutzer entstummen">
+                            <button onclick="unmuteUser()">Entstumm</button>
+                        </div>
                     </div>
                 </div>
                 <div class="admin-section">
                     <h4>Nachrichten</h4>
                     <div class="admin-buttons">
-                        <div><input id="edit-msg-id" placeholder="Nachrichten-ID"><input id="edit-msg-content" placeholder="Neuer Inhalt"><button onclick="editMessage()">Bearbeiten</button></div>
-                        <div><input id="announcement" placeholder="Ankündigung"><button onclick="sendAnnouncement()">Senden</button></div>
-                        <div><input id="censor-msg-id" placeholder="Nachrichten-ID zensieren"><button onclick="censorMessage()">Zensieren</button></div>
+                        <div class="button-group">
+                            <input id="edit-msg-id" placeholder="Nachrichten-ID">
+                            <input id="edit-msg-content" placeholder="Neuer Inhalt">
+                            <button onclick="editMessage()">Bearbeiten</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="announcement" placeholder="Ankündigung">
+                            <button class="secondary" onclick="sendAnnouncement()">Senden</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="censor-msg-id" placeholder="Nachrichten-ID zensieren">
+                            <button class="danger" onclick="censorMessage()">Zensieren</button>
+                        </div>
                     </div>
                 </div>
                 <div class="admin-section">
                     <h4>Verwaltung</h4>
                     <div class="admin-buttons">
-                        <div><select id="theme"><option value="light">Hell</option><option value="dark">Dunkel</option></select><button onclick="changeTheme()">Thema ändern</button></div>
-                        <div><input id="pin-msg-id" placeholder="Nachrichten-ID anpinnen"><button onclick="pinMessage()">Anpinnen</button></div>
-                        <div><input id="auto-mod-max" placeholder="Max. Nachrichten" type="number"><button onclick="setAutoMod()">Auto-Mod setzen</button></div>
-                        <div><input id="group-name" placeholder="Gruppenname"><button onclick="createGroup()">Gruppe erstellen</button></div>
-                        <div><input id="assign-user" placeholder="Benutzer"><select id="assign-group"><option value="">Keine</option></select><button onclick="assignGroup()">Gruppe zuweisen</button></div>
-                        <div><input id="timer-duration" placeholder="Dauer (Minuten)" type="number"><button onclick="setTimer()">Timer setzen</button></div>
-                        <div><button onclick="exportMessages()">Nachrichten exportieren</button></div>
-                        <div><input id="import-messages" type="file" accept=".json"><button onclick="importMessages()">Nachrichten importieren</button></div>
-                        <div><input id="change-role-user" placeholder="Benutzer"><select id="change-role"><option value="user">User</option><option value="admin">Admin</option></select><button onclick="changeRole()">Rolle ändern</button></div>
-                        <div><input id="change-pass-user" placeholder="Benutzer"><input id="change-pass" placeholder="Neues Passwort"><button onclick="changePassword()">Passwort ändern</button></div>
-                        <div><input id="ip-ban-user" placeholder="Benutzer IP bannen"><button onclick="ipBanUser()">IP-Bannen</button></div>
-                        <div><input id="temp-ban-user" placeholder="Benutzer"><input id="temp-ban-duration" placeholder="Dauer (Minuten)" type="number"><button onclick="tempBanUser()">Temp-Bann</button></div>
-                        <div><button onclick="showStats()">Statistiken anzeigen</button></div>
-                        <div><input id="private-msg-user" placeholder="Benutzer"><input id="private-msg-content" placeholder="Nachricht"><button onclick="sendPrivateMessage()">Privatnachricht</button></div>
-                        <div><input id="tag-user" placeholder="Benutzer"><input id="tag-content" placeholder="Tag"><button onclick="addTag()">Tag hinzufügen</button></div>
-                        <div><input id="note-user" placeholder="Benutzer"><input id="note-content" placeholder="Notiz"><button onclick="addNote()">Notiz hinzufügen</button></div>
-                        <div><input id="verify-user" placeholder="Benutzer verifizieren"><button onclick="verifyUser()">Verifizieren</button></div>
+                        <div class="button-group">
+                            <select id="theme"><option value="light">Hell</option><option value="dark">Dunkel</option></select>
+                            <button onclick="changeTheme()">Thema ändern</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="pin-msg-id" placeholder="Nachrichten-ID anpinnen">
+                            <button onclick="pinMessage()">Anpinnen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="auto-mod-max" placeholder="Max. Nachrichten" type="number">
+                            <button onclick="setAutoMod()">Auto-Mod setzen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="group-name" placeholder="Gruppenname">
+                            <button onclick="createGroup()">Gruppe erstellen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="assign-user" placeholder="Benutzer">
+                            <select id="assign-group"><option value="">Keine</option></select>
+                            <button onclick="assignGroup()">Gruppe zuweisen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="timer-duration" placeholder="Dauer (Minuten)" type="number">
+                            <button onclick="setTimer()">Timer setzen</button>
+                        </div>
+                        <div class="button-group">
+                            <button onclick="exportMessages()">Nachrichten exportieren</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="import-messages" type="file" accept=".json">
+                            <button onclick="importMessages()">Nachrichten importieren</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="change-role-user" placeholder="Benutzer">
+                            <select id="change-role"><option value="user">User</option><option value="admin">Admin</option></select>
+                            <button onclick="changeRole()">Rolle ändern</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="change-pass-user" placeholder="Benutzer">
+                            <input id="change-pass" placeholder="Neues Passwort">
+                            <button onclick="changePassword()">Passwort ändern</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="ip-ban-user" placeholder="Benutzer IP bannen">
+                            <button class="danger" onclick="ipBanUser()">IP-Bannen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="temp-ban-user" placeholder="Benutzer">
+                            <input id="temp-ban-duration" placeholder="Dauer (Minuten)" type="number">
+                            <button class="danger" onclick="tempBanUser()">Temp-Bann</button>
+                        </div>
+                        <div class="button-group">
+                            <button class="secondary" onclick="showStats()">Statistiken anzeigen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="private-msg-user" placeholder="Benutzer">
+                            <input id="private-msg-content" placeholder="Nachricht">
+                            <button class="secondary" onclick="sendPrivateMessage()">Privatnachricht</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="tag-user" placeholder="Benutzer">
+                            <input id="tag-content" placeholder="Tag">
+                            <button onclick="addTag()">Tag hinzufügen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="note-user" placeholder="Benutzer">
+                            <input id="note-content" placeholder="Notiz">
+                            <button onclick="addNote()">Notiz hinzufügen</button>
+                        </div>
+                        <div class="button-group">
+                            <input id="verify-user" placeholder="Benutzer verifizieren">
+                            <button onclick="verifyUser()">Verifizieren</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -68,5 +68,110 @@
     "timestamp": "2025-03-20T15:52:57.822Z",
     "action": "announcement",
     "details": "Announcement: v"
+  },
+  {
+    "timestamp": "2025-03-20T16:01:56.741Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:02:44.765Z",
+    "action": "add-user",
+    "details": "1 added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-20T16:02:55.520Z",
+    "action": "login",
+    "details": "1 logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:03:21.453Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T16:03:29.645Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-20T16:03:37.825Z",
+    "action": "say-hello",
+    "details": "Bot said hello"
+  },
+  {
+    "timestamp": "2025-03-20T16:03:44.416Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-20T16:03:51.119Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T16:03:52.409Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-20T16:03:55.319Z",
+    "action": "unlock-chat",
+    "details": "Chat unlocked"
+  },
+  {
+    "timestamp": "2025-03-20T16:04:09.400Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-20T16:08:30.412Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T16:09:08.014Z",
+    "action": "say-hello",
+    "details": "Bot said hello"
+  },
+  {
+    "timestamp": "2025-03-20T16:09:33.416Z",
+    "action": "add-user",
+    "details": "e added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-20T16:09:48.021Z",
+    "action": "delete-user",
+    "details": "e deleted"
+  },
+  {
+    "timestamp": "2025-03-20T16:09:52.262Z",
+    "action": "add-user",
+    "details": "e added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-20T16:09:56.897Z",
+    "action": "ban",
+    "details": "e banned"
+  },
+  {
+    "timestamp": "2025-03-20T16:10:37.029Z",
+    "action": "unban",
+    "details": "e unbanned"
+  },
+  {
+    "timestamp": "2025-03-20T16:10:40.009Z",
+    "action": "login",
+    "details": "e logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:10:50.048Z",
+    "action": "create-group",
+    "details": "Group j created"
+  },
+  {
+    "timestamp": "2025-03-20T16:11:20.841Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
   }
 ]

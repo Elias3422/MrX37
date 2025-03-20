@@ -1,9 +1,11 @@
 {
-  "theme": "light",
+  "theme": "dark",
   "pinnedMessage": null,
   "chatLocked": false,
   "autoMod": {
     "maxMessages": 10
   },
-  "groups": {}
+  "groups": {
+    "j": []
+  }
 }

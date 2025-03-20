@@ -13,112 +13,38 @@ function sendMessage() {
         } else {
             alert(data.message);
         }
-    })
-    .catch(err => console.error("Fehler beim Senden:", err));
+    });
 }
 
 function sayHello() {
-    fetch("/say-hello", { method: "POST" })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) loadMessages();
-        else alert(data.message);
-    });
+    fetch("/say-hello", { method: "POST" }).then(res => res.json()).then(data => { if (data.success) loadMessages(); else alert(data.message); });
 }
 
 function showTime() {
-    fetch("/show-time", { method: "POST" })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) loadMessages();
-        else alert(data.message);
-    });
+    fetch("/show-time", { method: "POST" }).then(res => res.json()).then(data => { if (data.success) loadMessages(); else alert(data.message); });
 }
 
 function clearChat() {
-    fetch("/clear-chat", { method: "POST" })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) loadMessages();
-        else alert(data.message);
-    });
+    fetch("/clear-chat", { method: "POST" }).then(res => res.json()).then(data => { if (data.success) loadMessages(); else alert(data.message); });
 }
 
 function lockChat() {
-    fetch("/lock-chat", { method: "POST" })
-    .then(res => res.json())
-    .then(data => alert(data.message));
+    fetch("/lock-chat", { method: "POST" }).then(res => res.json()).then(data => alert(data.message));
 }
 
 function unlockChat() {
-    fetch("/unlock-chat", { method: "POST" })
-    .then(res => res.json())
-    .then(data => alert(data.message));
-}
-
-function banUser() {
-    const username = document.getElementById("ban-user").value;
-    fetch("/ban", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username })
-    })
-    .then(res => res.json())
-    .then(data => {
-        alert(data.message);
-        loadUserList();
-    });
-}
-
-function unbanUser() {
-    const username = document.getElementById("unban-user").value;
-    fetch("/unban", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username })
-    })
-    .then(res => res.json())
-    .then(data => {
-        alert(data.message);
-        loadUserList();
-    });
-}
-
-function muteUser() {
-    const username = document.getElementById("mute-user").value;
-    fetch("/mute", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username })
-    })
-    .then(res => res.json())
-    .then(data => {
-        alert(data.message);
-        loadUserList();
-    });
-}
-
-function unmuteUser() {
-    const username = document.getElementById("unmute-user").value;
-    fetch("/unmute", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username })
-    })
-    .then(res => res.json())
-    .then(data => {
-        alert(data.message);
-        loadUserList();
-    });
+    fetch("/unlock-chat", { method: "POST" }).then(res => res.json()).then(data => alert(data.message));
 }
 
 function addUser() {
     const username = document.getElementById("add-user-name").value;
     const password = document.getElementById("add-user-pass").value;
+    const role = document.getElementById("add-user-role").value;
+    const group = document.getElementById("add-user-group").value;
     fetch("/add-user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password, role: "user" })
+        body: JSON.stringify({ username, password, role, group })
     })
     .then(res => res.json())
     .then(data => {
@@ -129,65 +55,226 @@ function addUser() {
 
 function deleteUser() {
     const username = document.getElementById("delete-user").value;
-    fetch("/delete-user", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username })
-    })
+    fetch("/delete-user", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
     .then(res => res.json())
-    .then(data => {
-        alert(data.message);
-        loadUserList();
-    });
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function banUser() {
+    const username = document.getElementById("ban-user").value;
+    fetch("/ban", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function unbanUser() {
+    const username = document.getElementById("unban-user").value;
+    fetch("/unban", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function muteUser() {
+    const username = document.getElementById("mute-user").value;
+    fetch("/mute", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function unmuteUser() {
+    const username = document.getElementById("unmute-user").value;
+    fetch("/unmute", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
 }
 
 function editMessage() {
     const messageId = parseInt(document.getElementById("edit-msg-id").value);
     const newContent = document.getElementById("edit-msg-content").value;
-    fetch("/edit-message", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messageId, newContent })
-    })
+    fetch("/edit-message", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messageId, newContent }) })
     .then(res => res.json())
-    .then(data => {
-        if (data.success) loadMessages();
-        alert(data.message);
-    });
+    .then(data => { if (data.success) loadMessages(); alert(data.message); });
 }
 
 function sendAnnouncement() {
     const content = document.getElementById("announcement").value;
-    fetch("/announcement", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content })
-    })
+    fetch("/announcement", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ content }) })
+    .then(res => res.json())
+    .then(data => { if (data.success) loadMessages(); alert(data.message); });
+}
+
+function censorMessage() {
+    const messageId = parseInt(document.getElementById("censor-msg-id").value);
+    fetch("/censor-message", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messageId }) })
+    .then(res => res.json())
+    .then(data => { if (data.success) loadMessages(); alert(data.message); });
+}
+
+function changeTheme() {
+    const theme = document.getElementById("theme").value;
+    fetch("/change-theme", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ theme }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadMessages(); });
+}
+
+function pinMessage() {
+    const messageId = parseInt(document.getElementById("pin-msg-id").value);
+    fetch("/pin-message", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messageId }) })
+    .then(res => res.json())
+    .then(data => { if (data.success) loadMessages(); alert(data.message); });
+}
+
+function setAutoMod() {
+    const maxMessages = document.getElementById("auto-mod-max").value;
+    fetch("/set-auto-mod", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ maxMessages }) })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+}
+
+function createGroup() {
+    const groupName = document.getElementById("group-name").value;
+    fetch("/create-group", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ groupName }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); updateGroupDropdowns(); });
+}
+
+function assignGroup() {
+    const username = document.getElementById("assign-user").value;
+    const groupName = document.getElementById("assign-group").value;
+    fetch("/assign-group", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, groupName }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function setTimer() {
+    const duration = document.getElementById("timer-duration").value;
+    fetch("/set-timer", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ duration }) })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+}
+
+function exportMessages() {
+    fetch("/export-messages", { method: "POST" })
     .then(res => res.json())
     .then(data => {
-        if (data.success) loadMessages();
-        alert(data.message);
+        if (data.success) {
+            const blob = new Blob([JSON.stringify(data.messages, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "chat-messages.json";
+            a.click();
+            URL.revokeObjectURL(url);
+        } else {
+            alert(data.message);
+        }
     });
+}
+
+function importMessages() {
+    const fileInput = document.getElementById("import-messages");
+    const file = fileInput.files[0];
+    if (!file) return alert("Bitte eine Datei auswählen!");
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const messageList = JSON.parse(e.target.result);
+        fetch("/import-messages", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messageList }) })
+        .then(res => res.json())
+        .then(data => { if (data.success) loadMessages(); alert(data.message); });
+    };
+    reader.readAsText(file);
+}
+
+function changeRole() {
+    const username = document.getElementById("change-role-user").value;
+    const newRole = document.getElementById("change-role").value;
+    fetch("/change-role", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, newRole }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function changePassword() {
+    const username = document.getElementById("change-pass-user").value;
+    const newPassword = document.getElementById("change-pass").value;
+    fetch("/change-password", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, newPassword }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function ipBanUser() {
+    const username = document.getElementById("ip-ban-user").value;
+    fetch("/ip-ban", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function tempBanUser() {
+    const username = document.getElementById("temp-ban-user").value;
+    const duration = document.getElementById("temp-ban-duration").value;
+    fetch("/temp-ban", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, duration }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function showStats() {
+    fetch("/stats")
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            const stats = Object.entries(data.stats).map(([user, count]) => `${user}: ${count} Nachrichten`).join("\n");
+            alert("Chat-Statistiken:\n" + stats);
+        } else {
+            alert(data.message);
+        }
+    });
+}
+
+function sendPrivateMessage() {
+    const username = document.getElementById("private-msg-user").value;
+    const content = document.getElementById("private-msg-content").value;
+    fetch("/private-message", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, content }) })
+    .then(res => res.json())
+    .then(data => { if (data.success) loadMessages(); alert(data.message); });
+}
+
+function addTag() {
+    const username = document.getElementById("tag-user").value;
+    const tag = document.getElementById("tag-content").value;
+    fetch("/add-tag", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, tag }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function addNote() {
+    const username = document.getElementById("note-user").value;
+    const note = document.getElementById("note-content").value;
+    fetch("/add-note", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username, note }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
+}
+
+function verifyUser() {
+    const username = document.getElementById("verify-user").value;
+    fetch("/verify-user", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
+    .then(res => res.json())
+    .then(data => { alert(data.message); loadUserList(); });
 }
 
 function loadMessages() {
     fetch("/messages")
     .then(res => {
         if (res.status === 401 || res.status === 403) {
-            console.log("Zugriff verweigert, redirect zu /");
             window.location.href = "/";
             return Promise.reject("Zugriff verweigert");
         }
-        if (!res.ok) throw new Error(`HTTP-Fehler: ${res.status}`);
         return res.json();
     })
     .then(data => {
-        console.log("Geladene Nachrichten:", data);
         const chatBox = document.getElementById("chat-box");
         const loading = document.getElementById("loading");
-        chatBox.innerHTML = "";
+        chatBox.innerHTML = data.pinnedMessage ? `<p><b>Angepinnte Nachricht:</b> ${data.pinnedMessage.content} (ID: ${data.pinnedMessage.id})</p><hr>` : "";
         if (!data.messages || data.messages.length === 0) {
-            chatBox.innerHTML = "<p>Keine Nachrichten vorhanden.</p>";
+            chatBox.innerHTML += "<p>Keine Nachrichten vorhanden.</p>";
         } else {
             data.messages.forEach(msg => {
                 const className = msg.username === "admin" ? "admin-name" : "user-name";
@@ -197,29 +284,46 @@ function loadMessages() {
         chatBox.scrollTop = chatBox.scrollHeight;
         loading.style.display = "none";
         chatBox.style.display = "block";
-    })
-    .catch(err => console.error("Fehler beim Laden:", err));
+        document.body.classList.toggle("dark-mode", data.theme === "dark");
+    });
 }
 
 function loadUserList() {
     fetch("/admin/users-status")
-    .then(res => {
-        if (res.status === 403) return Promise.resolve({ success: false });
-        return res.json();
-    })
+    .then(res => res.status === 403 ? Promise.resolve({ success: false }) : res.json())
     .then(data => {
         const userList = document.getElementById("user-list-content");
         userList.innerHTML = "";
         if (data.success && data.users) {
             data.users.forEach(user => {
                 const statusClass = user.isOnline ? "online" : "offline";
-                userList.innerHTML += `<li>${user.username} <span class="status-dot ${statusClass}"></span></li>`;
+                const tags = user.tags.length ? ` [${user.tags.join(", ")}]` : "";
+                const verified = user.verified ? " ✅" : "";
+                userList.innerHTML += `<li>${user.username}${tags}${verified} <span class="status-dot ${statusClass}"></span></li>`;
             });
         } else {
             userList.innerHTML = "<li>Keine Benutzer verfügbar oder keine Admin-Rechte.</li>";
         }
-    })
-    .catch(err => console.error("Fehler beim Laden der Benutzerliste:", err));
+    });
+}
+
+function updateGroupDropdowns() {
+    fetch("/users")
+    .then(res => res.json())
+    .then(data => {
+        const groupSelects = [document.getElementById("add-user-group"), document.getElementById("assign-group")];
+        groupSelects.forEach(select => {
+            select.innerHTML = "<option value=''>Keine</option>";
+            if (data.success && data.users.groups) {
+                Object.keys(data.users.groups).forEach(group => {
+                    const option = document.createElement("option");
+                    option.value = group;
+                    option.text = group;
+                    select.appendChild(option);
+                });
+            }
+        });
+    });
 }
 
 window.onload = function() {
@@ -234,6 +338,7 @@ window.onload = function() {
                     section.classList.toggle("collapsed");
                 });
             });
+            updateGroupDropdowns();
         }
     });
     loadMessages();
@@ -241,5 +346,5 @@ window.onload = function() {
     setInterval(() => {
         loadMessages();
         loadUserList();
-    }, 5000); // Beides alle 5 Sekunden aktualisieren
+    }, 5000);
 };
