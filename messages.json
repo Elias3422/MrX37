@@ -24,5 +24,24 @@
     "username": "admin",
     "content": "b",
     "timestamp": "2025-03-20T15:47:47.206Z"
+  },
+  {
+    "id": 4,
+    "username": "Bot",
+    "content": "Aktuelle Zeit: 3:50:59 PM",
+    "timestamp": "2025-03-20T15:50:59.817Z"
+  },
+  {
+    "id": 5,
+    "username": "System",
+    "content": "v",
+    "timestamp": "2025-03-20T15:52:57.822Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 6,
+    "username": "admin",
+    "content": "g",
+    "timestamp": "2025-03-20T15:53:44.114Z"
   }
 ]

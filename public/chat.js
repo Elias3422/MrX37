@@ -64,7 +64,10 @@ function banUser() {
         body: JSON.stringify({ username })
     })
     .then(res => res.json())
-    .then(data => alert(data.message));
+    .then(data => {
+        alert(data.message);
+        loadUserList();
+    });
 }
 
 function unbanUser() {
@@ -75,7 +78,10 @@ function unbanUser() {
         body: JSON.stringify({ username })
     })
     .then(res => res.json())
-    .then(data => alert(data.message));
+    .then(data => {
+        alert(data.message);
+        loadUserList();
+    });
 }
 
 function muteUser() {
@@ -86,7 +92,10 @@ function muteUser() {
         body: JSON.stringify({ username })
     })
     .then(res => res.json())
-    .then(data => alert(data.message));
+    .then(data => {
+        alert(data.message);
+        loadUserList();
+    });
 }
 
 function unmuteUser() {
@@ -97,7 +106,10 @@ function unmuteUser() {
         body: JSON.stringify({ username })
     })
     .then(res => res.json())
-    .then(data => alert(data.message));
+    .then(data => {
+        alert(data.message);
+        loadUserList();
+    });
 }
 
 function addUser() {
@@ -109,7 +121,10 @@ function addUser() {
         body: JSON.stringify({ username, password, role: "user" })
     })
     .then(res => res.json())
-    .then(data => alert(data.message));
+    .then(data => {
+        alert(data.message);
+        loadUserList();
+    });
 }
 
 function deleteUser() {
@@ -120,7 +135,10 @@ function deleteUser() {
         body: JSON.stringify({ username })
     })
     .then(res => res.json())
-    .then(data => alert(data.message));
+    .then(data => {
+        alert(data.message);
+        loadUserList();
+    });
 }
 
 function editMessage() {
@@ -153,7 +171,6 @@ function sendAnnouncement() {
 }
 
 function loadMessages() {
-    console.log("Lade Nachrichten...");
     fetch("/messages")
     .then(res => {
         if (res.status === 401 || res.status === 403) {
@@ -184,14 +201,45 @@ function loadMessages() {
     .catch(err => console.error("Fehler beim Laden:", err));
 }
 
+function loadUserList() {
+    fetch("/admin/users-status")
+    .then(res => {
+        if (res.status === 403) return Promise.resolve({ success: false });
+        return res.json();
+    })
+    .then(data => {
+        const userList = document.getElementById("user-list-content");
+        userList.innerHTML = "";
+        if (data.success && data.users) {
+            data.users.forEach(user => {
+                const statusClass = user.isOnline ? "online" : "offline";
+                userList.innerHTML += `<li>${user.username} <span class="status-dot ${statusClass}"></span></li>`;
+            });
+        } else {
+            userList.innerHTML = "<li>Keine Benutzer verfügbar oder keine Admin-Rechte.</li>";
+        }
+    })
+    .catch(err => console.error("Fehler beim Laden der Benutzerliste:", err));
+}
+
 window.onload = function() {
     fetch("/check-role")
     .then(res => res.json())
     .then(data => {
         if (data.success && data.role === "admin") {
             document.getElementById("admin-panel").style.display = "block";
+            document.querySelectorAll(".admin-section h4").forEach(header => {
+                header.addEventListener("click", () => {
+                    const section = header.parentElement;
+                    section.classList.toggle("collapsed");
+                });
+            });
         }
     });
     loadMessages();
-    setInterval(loadMessages, 5000); // Automatisch alle 5 Sekunden laden
+    loadUserList();
+    setInterval(() => {
+        loadMessages();
+        loadUserList();
+    }, 5000); // Beides alle 5 Sekunden aktualisieren
 };

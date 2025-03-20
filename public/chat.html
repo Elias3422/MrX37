@@ -139,7 +139,7 @@
         .admin-buttons button:hover {
             background-color: #388e3c;
         }
-        .admin-buttons input {
+        .admin-buttons input, .admin-buttons select {
             padding: 8px;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -173,6 +173,31 @@
             text-align: center;
             padding: 20px;
             color: #777;
+        }
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        .dark-mode .container {
+            background-color: #2d2d2d;
+        }
+        .dark-mode .chat-header {
+            background-color: #1a73e8;
+        }
+        .dark-mode .chat-box p {
+            background-color: #3c3c3c;
+        }
+        .dark-mode .message-input {
+            background-color: #333;
+        }
+        .dark-mode .sidebar {
+            background-color: #252525;
+        }
+        .dark-mode .admin-section {
+            background-color: #333;
+        }
+        .dark-mode #user-list li {
+            background-color: #3c3c3c;
         }
         @media (max-width: 600px) {
             .container {
@@ -231,12 +256,12 @@
                 <div class="admin-section">
                     <h4>Benutzerverwaltung</h4>
                     <div class="admin-buttons">
+                        <div><input id="add-user-name" placeholder="Name"><input id="add-user-pass" placeholder="Passwort"><select id="add-user-role"><option value="user">User</option><option value="admin">Admin</option></select><select id="add-user-group"><option value="">Keine</option></select><button onclick="addUser()">Hinzufügen</button></div>
+                        <div><input id="delete-user" placeholder="Benutzer löschen"><button onclick="deleteUser()">Löschen</button></div>
                         <div><input id="ban-user" placeholder="Benutzer bannen"><button onclick="banUser()">Bannen</button></div>
                         <div><input id="unban-user" placeholder="Benutzer entbannen"><button onclick="unbanUser()">Entbannen</button></div>
                         <div><input id="mute-user" placeholder="Benutzer stummschalten"><button onclick="muteUser()">Stumm</button></div>
                         <div><input id="unmute-user" placeholder="Benutzer entstummen"><button onclick="unmuteUser()">Entstumm</button></div>
-                        <div><input id="add-user-name" placeholder="Name"><input id="add-user-pass" placeholder="Passwort"><button onclick="addUser()">Hinzufügen</button></div>
-                        <div><input id="delete-user" placeholder="Benutzer löschen"><button onclick="deleteUser()">Löschen</button></div>
                     </div>
                 </div>
                 <div class="admin-section">
@@ -244,6 +269,29 @@
                     <div class="admin-buttons">
                         <div><input id="edit-msg-id" placeholder="Nachrichten-ID"><input id="edit-msg-content" placeholder="Neuer Inhalt"><button onclick="editMessage()">Bearbeiten</button></div>
                         <div><input id="announcement" placeholder="Ankündigung"><button onclick="sendAnnouncement()">Senden</button></div>
+                        <div><input id="censor-msg-id" placeholder="Nachrichten-ID zensieren"><button onclick="censorMessage()">Zensieren</button></div>
+                    </div>
+                </div>
+                <div class="admin-section">
+                    <h4>Verwaltung</h4>
+                    <div class="admin-buttons">
+                        <div><select id="theme"><option value="light">Hell</option><option value="dark">Dunkel</option></select><button onclick="changeTheme()">Thema ändern</button></div>
+                        <div><input id="pin-msg-id" placeholder="Nachrichten-ID anpinnen"><button onclick="pinMessage()">Anpinnen</button></div>
+                        <div><input id="auto-mod-max" placeholder="Max. Nachrichten" type="number"><button onclick="setAutoMod()">Auto-Mod setzen</button></div>
+                        <div><input id="group-name" placeholder="Gruppenname"><button onclick="createGroup()">Gruppe erstellen</button></div>
+                        <div><input id="assign-user" placeholder="Benutzer"><select id="assign-group"><option value="">Keine</option></select><button onclick="assignGroup()">Gruppe zuweisen</button></div>
+                        <div><input id="timer-duration" placeholder="Dauer (Minuten)" type="number"><button onclick="setTimer()">Timer setzen</button></div>
+                        <div><button onclick="exportMessages()">Nachrichten exportieren</button></div>
+                        <div><input id="import-messages" type="file" accept=".json"><button onclick="importMessages()">Nachrichten importieren</button></div>
+                        <div><input id="change-role-user" placeholder="Benutzer"><select id="change-role"><option value="user">User</option><option value="admin">Admin</option></select><button onclick="changeRole()">Rolle ändern</button></div>
+                        <div><input id="change-pass-user" placeholder="Benutzer"><input id="change-pass" placeholder="Neues Passwort"><button onclick="changePassword()">Passwort ändern</button></div>
+                        <div><input id="ip-ban-user" placeholder="Benutzer IP bannen"><button onclick="ipBanUser()">IP-Bannen</button></div>
+                        <div><input id="temp-ban-user" placeholder="Benutzer"><input id="temp-ban-duration" placeholder="Dauer (Minuten)" type="number"><button onclick="tempBanUser()">Temp-Bann</button></div>
+                        <div><button onclick="showStats()">Statistiken anzeigen</button></div>
+                        <div><input id="private-msg-user" placeholder="Benutzer"><input id="private-msg-content" placeholder="Nachricht"><button onclick="sendPrivateMessage()">Privatnachricht</button></div>
+                        <div><input id="tag-user" placeholder="Benutzer"><input id="tag-content" placeholder="Tag"><button onclick="addTag()">Tag hinzufügen</button></div>
+                        <div><input id="note-user" placeholder="Benutzer"><input id="note-content" placeholder="Notiz"><button onclick="addNote()">Notiz hinzufügen</button></div>
+                        <div><input id="verify-user" placeholder="Benutzer verifizieren"><button onclick="verifyUser()">Verifizieren</button></div>
                     </div>
                 </div>
             </div>
