@@ -268,5 +268,10 @@
     "timestamp": "2025-03-20T16:23:48.126Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:24:50.418Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
   }
 ]
