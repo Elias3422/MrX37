@@ -81,6 +81,6 @@ window.onload = function() {
     } else {
         console.log("Keine Admin-Rolle, Panel bleibt versteckt");
     }
-    loadMessages(); // Initiales Laden
+    loadMessages();
     setInterval(loadMessages, 5000); // Automatisch alle 5 Sekunden laden
 };
