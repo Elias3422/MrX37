@@ -2,7 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const fs = require("fs");
 const path = require("path");
-const app = express();
+const app = express(); // Hier wird app definiert
 
 // Middleware
 app.use(express.json());
@@ -89,7 +89,7 @@ app.post("/send-message", (req, res) => {
     res.json({ success: true });
 });
 
-// Admin-Route: Bot-Befehle (alle vorherigen Funktionen)
+// Admin-Route: Bot-Befehle
 app.post("/bot-command", (req, res) => {
     console.log("Zugriff auf /bot-command, Session:", req.session.user);
     if (!req.session.user || req.session.user.role !== "admin") {
@@ -123,7 +123,7 @@ app.post("/bot-command", (req, res) => {
         id: messages.length,
         username: "Bot",
         content: response,
-        timestamp: New Date().toISOString()
+        timestamp: new Date().toISOString()
     };
     messages.push(message);
     fs.writeFileSync(MESSAGES_FILE, JSON.stringify(messages, null, 2));

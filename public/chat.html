@@ -6,6 +6,7 @@
         .chat-box { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; }
         .admin-name { color: red; font-weight: bold; }
         .user-name { color: blue; }
+        #admin-panel { margin-top: 10px; }
     </style>
     <script src="/chat.js" defer></script>
 </head>
@@ -15,5 +16,9 @@
     <input id="message" type="text" placeholder="Nachricht eingeben">
     <button onclick="sendMessage()">Senden</button>
     <button onclick="loadMessages()">Aktualisieren</button>
+    <div id="admin-panel" style="display:none;">
+        <input id="bot-command" type="text" placeholder="Bot-Befehl (z. B. hello, time)">
+        <button onclick="sendBotCommand()">Befehl senden</button>
+    </div>
 </body>
 </html>

@@ -17,6 +17,25 @@ function sendMessage() {
     .catch(err => console.error("Fehler beim Senden:", err));
 }
 
+function sendBotCommand() {
+    const command = document.getElementById("bot-command").value;
+    fetch("/bot-command", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ command })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById("bot-command").value = "";
+            loadMessages();
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(err => console.error("Fehler beim Bot-Befehl:", err));
+}
+
 function loadMessages() {
     console.log("Lade Nachrichten...");
     fetch("/messages")
@@ -50,5 +69,18 @@ function loadMessages() {
 }
 
 window.onload = function() {
-    loadMessages();
+    const role = localStorage.getItem("role");
+    console.log("Rolle aus localStorage:", role);
+    if (role === "admin") {
+        const adminPanel = document.getElementById("admin-panel");
+        if (adminPanel) {
+            adminPanel.style.display = "block";
+        } else {
+            console.error("Admin-Panel nicht gefunden!");
+        }
+    } else {
+        console.log("Keine Admin-Rolle, Panel bleibt versteckt");
+    }
+    loadMessages(); // Initiales Laden
+    setInterval(loadMessages, 5000); // Automatisch alle 5 Sekunden laden
 };

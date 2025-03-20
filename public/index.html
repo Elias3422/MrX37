@@ -18,7 +18,9 @@
             })
             .then(res => res.json())
             .then(data => {
+                console.log("Login-Antwort:", data); // Debugging
                 if (data.success) {
+                    localStorage.setItem("role", data.role); // Rolle speichern
                     window.location.href = "/chat";
                 } else {
                     alert(data.message);
