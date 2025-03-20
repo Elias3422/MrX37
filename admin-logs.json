@@ -173,5 +173,100 @@
     "timestamp": "2025-03-20T16:11:20.841Z",
     "action": "clear-chat",
     "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T16:13:03.432Z",
+    "action": "ip-ban",
+    "details": "e IP-banned"
+  },
+  {
+    "timestamp": "2025-03-20T16:13:14.483Z",
+    "action": "login",
+    "details": "e logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:13:33.410Z",
+    "action": "import-messages",
+    "details": "Imported 0 messages"
+  },
+  {
+    "timestamp": "2025-03-20T16:14:05.897Z",
+    "action": "import-messages",
+    "details": "Imported 0 messages"
+  },
+  {
+    "timestamp": "2025-03-20T16:14:23.454Z",
+    "action": "temp-ban",
+    "details": "e banned for 20 minutes"
+  },
+  {
+    "timestamp": "2025-03-20T16:15:28.532Z",
+    "action": "add-user",
+    "details": "2 added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-20T16:15:32.850Z",
+    "action": "login",
+    "details": "2 logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:15:46.716Z",
+    "action": "login",
+    "details": "1 logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:16:05.534Z",
+    "action": "private-message",
+    "details": "Sent to 1: h"
+  },
+  {
+    "timestamp": "2025-03-20T16:16:20.380Z",
+    "action": "add-tag",
+    "details": "g added to 1"
+  },
+  {
+    "timestamp": "2025-03-20T16:16:53.662Z",
+    "action": "add-tag",
+    "details": "g added to 1"
+  },
+  {
+    "timestamp": "2025-03-20T16:17:01.153Z",
+    "action": "add-note",
+    "details": "Note added to 1: u"
+  },
+  {
+    "timestamp": "2025-03-20T16:17:06.723Z",
+    "action": "verify-user",
+    "details": "1 verified"
+  },
+  {
+    "timestamp": "2025-03-20T16:17:39.679Z",
+    "action": "announcement",
+    "details": "Announcement: c"
+  },
+  {
+    "timestamp": "2025-03-20T16:18:15.758Z",
+    "action": "censor-message",
+    "details": "Message 6 censored"
+  },
+  {
+    "timestamp": "2025-03-20T16:18:28.641Z",
+    "action": "edit-message",
+    "details": "Message 5 edited"
+  },
+  {
+    "timestamp": "2025-03-20T16:21:16.920Z",
+    "action": "login",
+    "details": "1 logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:22:40.021Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T16:23:48.126Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
