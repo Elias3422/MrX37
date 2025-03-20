@@ -413,5 +413,150 @@
     "timestamp": "2025-03-20T20:22:07.013Z",
     "action": "import-messages",
     "details": "Imported 1 messages"
+  },
+  {
+    "timestamp": "2025-03-20T20:25:53.712Z",
+    "action": "say-hello",
+    "details": "Bot said hello"
+  },
+  {
+    "timestamp": "2025-03-20T20:26:21.731Z",
+    "action": "edit-message",
+    "details": "Message 1 edited"
+  },
+  {
+    "timestamp": "2025-03-20T20:26:38.115Z",
+    "action": "edit-message",
+    "details": "Message 1 edited"
+  },
+  {
+    "timestamp": "2025-03-20T20:26:44.950Z",
+    "action": "announcement",
+    "details": "Announcement: J"
+  },
+  {
+    "timestamp": "2025-03-20T20:26:54.665Z",
+    "action": "censor-message",
+    "details": "Message 1 censored"
+  },
+  {
+    "timestamp": "2025-03-20T20:27:08.270Z",
+    "action": "censor-message",
+    "details": "Message 0 censored"
+  },
+  {
+    "timestamp": "2025-03-20T20:27:12.810Z",
+    "action": "censor-message",
+    "details": "Message 0 censored"
+  },
+  {
+    "timestamp": "2025-03-20T20:27:20.615Z",
+    "action": "censor-message",
+    "details": "Message 2 censored"
+  },
+  {
+    "timestamp": "2025-03-20T20:27:26.747Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-20T20:29:23.031Z",
+    "action": "import-messages",
+    "details": "Imported 1 messages"
+  },
+  {
+    "timestamp": "2025-03-20T20:29:32.700Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T20:29:37.954Z",
+    "action": "import-messages",
+    "details": "Imported 1 messages"
+  },
+  {
+    "timestamp": "2025-03-20T20:29:41.914Z",
+    "action": "import-messages",
+    "details": "Imported 1 messages"
+  },
+  {
+    "timestamp": "2025-03-20T20:29:52.619Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-20T20:29:54.021Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T20:32:22.343Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:32:36.414Z",
+    "action": "say-hello",
+    "details": "Bot said hello"
+  },
+  {
+    "timestamp": "2025-03-20T20:32:40.401Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T20:32:43.497Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-20T20:32:46.219Z",
+    "action": "unlock-chat",
+    "details": "Chat unlocked"
+  },
+  {
+    "timestamp": "2025-03-20T20:33:43.647Z",
+    "action": "edit-message",
+    "details": "Message 0 edited"
+  },
+  {
+    "timestamp": "2025-03-20T20:33:49.947Z",
+    "action": "announcement",
+    "details": "Announcement: z"
+  },
+  {
+    "timestamp": "2025-03-20T20:34:08.161Z",
+    "action": "set-auto-mod",
+    "details": "Max messages set to 1000"
+  },
+  {
+    "timestamp": "2025-03-20T20:34:16.314Z",
+    "action": "announcement",
+    "details": "Announcement: z"
+  },
+  {
+    "timestamp": "2025-03-20T20:34:24.703Z",
+    "action": "censor-message",
+    "details": "Message 0 censored"
+  },
+  {
+    "timestamp": "2025-03-20T20:34:31.123Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-20T20:34:36.063Z",
+    "action": "change-theme",
+    "details": "Theme changed to light"
+  },
+  {
+    "timestamp": "2025-03-20T20:34:42.795Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-20T20:34:48.808Z",
+    "action": "pin-message",
+    "details": "Message 2 pinned"
   }
 ]

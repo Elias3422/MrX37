@@ -2,7 +2,22 @@
   {
     "id": 0,
     "username": "admin",
-    "content": "Z",
-    "timestamp": "2025-03-20T20:21:25.089Z"
+    "content": "t5t5",
+    "timestamp": "2025-03-20T20:33:21.257Z",
+    "censored": true
+  },
+  {
+    "id": 1,
+    "username": "System",
+    "content": "z",
+    "timestamp": "2025-03-20T20:33:49.947Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 2,
+    "username": "System",
+    "content": "z",
+    "timestamp": "2025-03-20T20:34:16.314Z",
+    "isAnnouncement": true
   }
 ]
