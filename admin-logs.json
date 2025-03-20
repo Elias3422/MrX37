@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "timestamp": "2025-03-20T15:37:50.397Z",
+    "action": "login",
+    "details": "admin logged in"
+  }
+]

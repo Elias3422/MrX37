@@ -6,7 +6,8 @@
         .chat-box { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; }
         .admin-name { color: red; font-weight: bold; }
         .user-name { color: blue; }
-        #admin-panel { margin-top: 10px; }
+        #admin-panel { margin-top: 10px; display: none; }
+        button { margin: 5px; }
     </style>
     <script src="/chat.js" defer></script>
 </head>
@@ -15,9 +16,31 @@
     <div id="chat-box" class="chat-box" style="display:none;"></div>
     <input id="message" type="text" placeholder="Nachricht eingeben">
     <button onclick="sendMessage()">Senden</button>
-    <div id="admin-panel" style="display:none;">
-        <input id="bot-command" type="text" placeholder="Bot-Befehl (z. B. hello, adduser, delmsg)">
-        <button onclick="sendBotCommand()">Befehl senden</button>
+    <div id="admin-panel">
+        <h3>Admin-Steuerung</h3>
+        <button onclick="sayHello()">Hallo sagen</button>
+        <button onclick="showTime()">Zeit anzeigen</button>
+        <button onclick="clearChat()">Chat leeren</button>
+        <button onclick="lockChat()">Chat sperren</button>
+        <button onclick="unlockChat()">Chat entsperren</button>
+        <input id="ban-user" placeholder="Benutzer bannen">
+        <button onclick="banUser()">Bannen</button>
+        <input id="unban-user" placeholder="Benutzer entbannen">
+        <button onclick="unbanUser()">Entbannen</button>
+        <input id="mute-user" placeholder="Benutzer stummschalten">
+        <button onclick="muteUser()">Stummschalten</button>
+        <input id="unmute-user" placeholder="Benutzer entstummen">
+        <button onclick="unmuteUser()">Entstummen</button>
+        <input id="add-user-name" placeholder="Neuer Benutzername">
+        <input id="add-user-pass" placeholder="Passwort">
+        <button onclick="addUser()">Benutzer hinzufügen</button>
+        <input id="delete-user" placeholder="Benutzer löschen">
+        <button onclick="deleteUser()">Löschen</button>
+        <input id="edit-msg-id" placeholder="Nachrichten-ID">
+        <input id="edit-msg-content" placeholder="Neuer Inhalt">
+        <button onclick="editMessage()">Nachricht bearbeiten</button>
+        <input id="announcement" placeholder="Ankündigung">
+        <button onclick="sendAnnouncement()">Ankündigung senden</button>
     </div>
 </body>
 </html>

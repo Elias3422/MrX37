@@ -1,7 +1,12 @@
 {
   "admin": {
     "password": "1234",
-    "role": "admin"
+    "role": "admin",
+    "lastIp": "::ffff:127.0.0.1",
+    "loginHistory": [
+      "2025-03-20T15:37:50.396Z"
+    ],
+    "lastActivity": "2025-03-20T15:37:50.396Z"
   },
   "user1": {
     "password": "userPasswort",
