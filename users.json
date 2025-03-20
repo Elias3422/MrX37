@@ -4,9 +4,10 @@
     "role": "admin",
     "lastIp": "::ffff:127.0.0.1",
     "loginHistory": [
-      "2025-03-20T15:37:50.396Z"
+      "2025-03-20T15:37:50.396Z",
+      "2025-03-20T15:37:59.906Z"
     ],
-    "lastActivity": "2025-03-20T15:37:50.396Z"
+    "lastActivity": "2025-03-20T15:47:47.206Z"
   },
   "user1": {
     "password": "userPasswort",

@@ -1,62 +1,28 @@
 [
   {
     "id": 0,
-    "username": "admin",
-    "content": "f",
-    "timestamp": "2025-03-20T14:57:20.645Z"
+    "username": "Bot",
+    "content": "Hallo zurück!",
+    "timestamp": "2025-03-20T15:39:00.554Z"
   },
   {
     "id": 1,
-    "username": "admin",
-    "content": "v",
-    "timestamp": "2025-03-20T14:57:49.884Z"
+    "username": "System",
+    "content": "ju",
+    "timestamp": "2025-03-20T15:41:18.684Z",
+    "isAnnouncement": true
   },
   {
     "id": 2,
-    "username": "admin",
-    "content": "frr",
-    "timestamp": "2025-03-20T14:57:52.008Z"
+    "username": "System",
+    "content": "ju",
+    "timestamp": "2025-03-20T15:41:48.500Z",
+    "isAnnouncement": true
   },
   {
     "id": 3,
     "username": "admin",
-    "content": "",
-    "timestamp": "2025-03-20T14:57:53.895Z"
-  },
-  {
-    "id": 4,
-    "username": "admin",
-    "content": "G",
-    "timestamp": "2025-03-20T15:06:32.611Z"
-  },
-  {
-    "id": 5,
-    "username": "admin",
-    "content": "6",
-    "timestamp": "2025-03-20T15:06:44.144Z"
-  },
-  {
-    "id": 6,
-    "username": "admin",
-    "content": "hello",
-    "timestamp": "2025-03-20T15:07:58.975Z"
-  },
-  {
-    "id": 7,
-    "username": "Bot",
-    "content": "Hallo zurück!",
-    "timestamp": "2025-03-20T15:13:51.369Z"
-  },
-  {
-    "id": 8,
-    "username": "Bot",
-    "content": "Aktuelle Zeit: 3:14:01 PM",
-    "timestamp": "2025-03-20T15:14:01.726Z"
-  },
-  {
-    "id": 9,
-    "username": "admin",
-    "content": "G",
-    "timestamp": "2025-03-20T15:14:26.304Z"
+    "content": "b",
+    "timestamp": "2025-03-20T15:47:47.206Z"
   }
 ]
