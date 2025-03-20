@@ -1,11 +1,13 @@
 {
-  "theme": "dark",
+  "theme": "light",
   "pinnedMessage": null,
   "chatLocked": false,
   "autoMod": {
-    "maxMessages": 10
+    "maxMessages": 1
   },
   "groups": {
-    "j": []
-  }
+    "j": [],
+    "Jj": []
+  },
+  "timer": "2025-03-20T20:22:20.024Z"
 }

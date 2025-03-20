@@ -273,5 +273,145 @@
     "timestamp": "2025-03-20T16:24:50.418Z",
     "action": "clear-chat",
     "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T20:13:58.565Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:13:59.323Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:14:10.597Z",
+    "action": "add-user",
+    "details": "E added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-20T20:14:23.309Z",
+    "action": "login",
+    "details": "E logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:14:45.370Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:15:08.714Z",
+    "action": "mute",
+    "details": "E muted"
+  },
+  {
+    "timestamp": "2025-03-20T20:15:20.404Z",
+    "action": "login",
+    "details": "E logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:15:37.926Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:15:49.144Z",
+    "action": "unmute",
+    "details": "E unmuted"
+  },
+  {
+    "timestamp": "2025-03-20T20:16:00.803Z",
+    "action": "announcement",
+    "details": "Announcement: Hallo "
+  },
+  {
+    "timestamp": "2025-03-20T20:16:06.109Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-20T20:16:09.814Z",
+    "action": "change-theme",
+    "details": "Theme changed to light"
+  },
+  {
+    "timestamp": "2025-03-20T20:16:15.616Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-20T20:16:20.260Z",
+    "action": "change-theme",
+    "details": "Theme changed to light"
+  },
+  {
+    "timestamp": "2025-03-20T20:16:25.158Z",
+    "action": "pin-message",
+    "details": "Message 0 pinned"
+  },
+  {
+    "timestamp": "2025-03-20T20:16:40.502Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T20:17:59.689Z",
+    "action": "set-auto-mod",
+    "details": "Max messages set to 1"
+  },
+  {
+    "timestamp": "2025-03-20T20:18:29.929Z",
+    "action": "login",
+    "details": "E logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:19:35.745Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-20T20:19:40.923Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T20:19:44.097Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-20T20:19:49.616Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T20:19:53.135Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-20T20:20:15.119Z",
+    "action": "unlock-chat",
+    "details": "Chat unlocked"
+  },
+  {
+    "timestamp": "2025-03-20T20:20:20.816Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-20T20:20:53.884Z",
+    "action": "create-group",
+    "details": "Group Jj created"
+  },
+  {
+    "timestamp": "2025-03-20T20:21:20.024Z",
+    "action": "set-timer",
+    "details": "Timer set for 1 minutes"
+  },
+  {
+    "timestamp": "2025-03-20T20:22:07.013Z",
+    "action": "import-messages",
+    "details": "Imported 1 messages"
   }
 ]
