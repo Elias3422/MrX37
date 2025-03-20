@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": 0,
+    "username": "admin",
+    "content": "f",
+    "timestamp": "2025-03-20T14:57:20.645Z"
+  },
+  {
+    "id": 1,
+    "username": "admin",
+    "content": "v",
+    "timestamp": "2025-03-20T14:57:49.884Z"
+  },
+  {
+    "id": 2,
+    "username": "admin",
+    "content": "frr",
+    "timestamp": "2025-03-20T14:57:52.008Z"
+  },
+  {
+    "id": 3,
+    "username": "admin",
+    "content": "",
+    "timestamp": "2025-03-20T14:57:53.895Z"
+  }
+]

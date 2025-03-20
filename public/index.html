@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="chat.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Benutzername">
-        <input type="password" id="password" placeholder="Passwort">
-        <button onclick="login()">Login</button>
-        <p id="message"></p>
-    </div>
+    <input id="username" type="text" placeholder="Benutzername">
+    <input id="password" type="text" placeholder="Passwort">
+    <button onclick="login()">Login</button>
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            fetch("/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = "/chat";
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(err => console.error("Login-Fehler:", err));
+        }
+    </script>
 </body>
 </html>
