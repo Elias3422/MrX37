@@ -593,5 +593,15 @@
     "timestamp": "2025-03-20T20:46:06.981Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T06:19:25.499Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T06:19:36.687Z",
+    "action": "delete-user",
+    "details": "E deleted"
   }
 ]
