@@ -110,5 +110,26 @@
     "username": "admin",
     "content": "Wenn er online ist habe ich die ip",
     "timestamp": "2025-03-21T10:13:56.491Z"
+  },
+  {
+    "id": 18,
+    "username": "admin",
+    "content": "F",
+    "timestamp": "2025-03-21T11:06:48.081Z",
+    "recipients": []
+  },
+  {
+    "id": 19,
+    "username": "admin",
+    "content": "",
+    "timestamp": "2025-03-21T11:13:19.487Z",
+    "recipients": []
+  },
+  {
+    "id": 20,
+    "username": "admin",
+    "content": "",
+    "timestamp": "2025-03-21T11:13:19.733Z",
+    "recipients": []
   }
 ]
