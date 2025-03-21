@@ -19,7 +19,7 @@ function sendMessage() {
             alert("Fehler vom Server: " + (data.message || "Unbekannter Fehler"));
         }
     })
-    .catch(err => alert("Fehler beim Senden der Nachricht: " + err.message));
+    .catch(err => alert("Fehler beim Senden: " + err.message));
 }
 
 // Private Nachricht senden (für alle Benutzer)
@@ -71,37 +71,61 @@ function sendPrivateMessage() {
 // Admin-Funktionen
 function sayHello() {
     fetch("/say-hello", { method: "POST" })
-    .then(res => res.json())
-    .then(data => { if (data.success) loadMessages(); else alert(data.message); })
-    .catch(err => alert("Fehler: " + err.message));
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
+    .then(data => {
+        if (data.success) loadMessages();
+        else alert("Fehler vom Server: " + data.message);
+    })
+    .catch(err => alert("Fehler bei 'Hallo sagen': " + err.message));
 }
 
 function showTime() {
     fetch("/show-time", { method: "POST" })
-    .then(res => res.json())
-    .then(data => { if (data.success) loadMessages(); else alert(data.message); })
-    .catch(err => alert("Fehler: " + err.message));
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
+    .then(data => {
+        if (data.success) loadMessages();
+        else alert("Fehler vom Server: " + data.message);
+    })
+    .catch(err => alert("Fehler bei 'Zeit anzeigen': " + err.message));
 }
 
 function clearChat() {
     fetch("/clear-chat", { method: "POST" })
-    .then(res => res.json())
-    .then(data => { if (data.success) loadMessages(); else alert(data.message); })
-    .catch(err => alert("Fehler: " + err.message));
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
+    .then(data => {
+        if (data.success) loadMessages();
+        else alert("Fehler vom Server: " + data.message);
+    })
+    .catch(err => alert("Fehler beim Chat leeren: " + err.message));
 }
 
 function lockChat() {
     fetch("/lock-chat", { method: "POST" })
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
     .then(data => alert(data.message))
-    .catch(err => alert("Fehler: " + err.message));
+    .catch(err => alert("Fehler beim Sperren des Chats: " + err.message));
 }
 
 function unlockChat() {
     fetch("/unlock-chat", { method: "POST" })
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
     .then(data => alert(data.message))
-    .catch(err => alert("Fehler: " + err.message));
+    .catch(err => alert("Fehler beim Entsperren des Chats: " + err.message));
 }
 
 function addUser() {
@@ -115,39 +139,76 @@ function addUser() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password, role, group })
     })
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
     .then(data => {
         alert(data.message);
         loadUserList();
     })
-    .catch(err => alert("Fehler: " + err.message));
+    .catch(err => alert("Fehler beim Hinzufügen des Benutzers: " + err.message));
 }
 
 function deleteUser() {
     const username = document.getElementById("delete-user").value.trim();
     if (!username) return alert("Benutzername erforderlich");
-    fetch("/delete-user", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
-    .then(res => res.json())
-    .then(data => { alert(data.message); loadUserList(); })
-    .catch(err => alert("Fehler: " + err.message));
+    fetch("/delete-user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
+    .then(data => {
+        alert(data.message);
+        loadUserList();
+    })
+    .catch(err => alert("Fehler beim Löschen des Benutzers: " + err.message));
 }
 
 function banUser() {
     const username = document.getElementById("ban-user").value.trim();
     if (!username) return alert("Benutzername erforderlich");
-    fetch("/ban", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
-    .then(res => res.json())
-    .then(data => { alert(data.message); loadUserList(); })
-    .catch(err => alert("Fehler: " + err.message));
+    fetch("/ban", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
+    .then(data => {
+        alert(data.message);
+        loadUserList();
+    })
+    .catch(err => alert("Fehler beim Bannen des Benutzers: " + err.message));
 }
 
 function unbanUser() {
     const username = document.getElementById("unban-user").value.trim();
     if (!username) return alert("Benutzername erforderlich");
-    fetch("/unban", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ username }) })
-    .then(res => res.json())
-    .then(data => { alert(data.message); loadUserList(); })
-    .catch(err => alert("Fehler: " + err.message));
+    fetch("/unban", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error(`Server-Fehler: ${res.status}`);
+        return res.json();
+    })
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            loadUserList();
+        } else {
+            alert("Fehler vom Server: " + (data.message || "Unbekannter Fehler"));
+        }
+    })
+    .catch(err => alert("Fehler beim Entbannen des Benutzers: " + err.message));
 }
 
 // Nachrichten laden und anzeigen
@@ -164,30 +225,25 @@ function loadMessages() {
     .then(data => {
         const chatBox = document.getElementById("chat-box");
         const loading = document.getElementById("loading");
-        const currentUser = data.currentUser;
+        const currentUser = data.currentUser || "guest";
 
-        console.log("Server-Antwort von /messages:", data); // Debugging
+        console.log("Server-Antwort von /messages:", data);
 
-        if (!currentUser) {
-            chatBox.innerHTML = "<p>Fehler: Aktueller Benutzer nicht verfügbar.</p>";
-            console.error("Fehler: currentUser fehlt in der Server-Antwort");
+        chatBox.innerHTML = data.pinnedMessage ? `<p><b>Angepinnte Nachricht:</b> ${data.pinnedMessage.content} (ID: ${data.pinnedMessage.id})</p><hr>` : "";
+        if (!data.messages || data.messages.length === 0) {
+            chatBox.innerHTML += "<p>Keine Nachrichten vorhanden.</p>";
         } else {
-            chatBox.innerHTML = data.pinnedMessage ? `<p><b>Angepinnte Nachricht:</b> ${data.pinnedMessage.content} (ID: ${data.pinnedMessage.id})</p><hr>` : "";
-            if (!data.messages || data.messages.length === 0) {
-                chatBox.innerHTML += "<p>Keine Nachrichten vorhanden.</p>";
-            } else {
-                data.messages.forEach(msg => {
-                    if (msg.isPrivate && msg.username !== currentUser && msg.recipient !== currentUser) return;
-                    const className = msg.username === "admin" ? "admin-name" : "user-name";
-                    const privateLabel = msg.isPrivate ? "[Privat] " : "";
-                    chatBox.innerHTML += `<p><span class="${className}">${msg.username}</span>: ${privateLabel}${msg.content} <small>(${msg.id})</small></p>`;
-                });
-            }
+            data.messages.forEach(msg => {
+                if (msg.isPrivate && msg.username !== currentUser && msg.recipient !== currentUser) return;
+                const className = msg.username === "admin" ? "admin-name" : "user-name";
+                const privateLabel = msg.isPrivate ? "[Privat] " : "";
+                chatBox.innerHTML += `<p><span class="${className}">${msg.username}</span>: ${privateLabel}${msg.content} <small>(${msg.id})</small></p>`;
+            });
         }
 
         chatBox.scrollTop = chatBox.scrollHeight;
-        loading.style.display = "none"; // Ladeanzeige ausblenden
-        chatBox.style.display = "block"; // Chat anzeigen, auch bei Fehlern
+        loading.style.display = "none";
+        chatBox.style.display = "block";
     })
     .catch(err => {
         const chatBox = document.getElementById("chat-box");
@@ -195,11 +251,11 @@ function loadMessages() {
         chatBox.innerHTML = "<p>Fehler beim Laden der Nachrichten: " + err.message + "</p>";
         loading.style.display = "none";
         chatBox.style.display = "block";
-        console.error("Fehler beim Laden der Nachrichten:", err);
+        console.error("Fehler beim Laden:", err);
     });
 }
 
-// Benutzerliste laden (für Admin-Panel)
+// Benutzerliste laden
 function loadUserList() {
     fetch("/admin/users-status")
     .then(res => res.status === 403 ? Promise.resolve({ success: false }) : res.json())
@@ -217,10 +273,13 @@ function loadUserList() {
             userList.innerHTML = "<li>Keine Benutzer verfügbar oder keine Admin-Rechte.</li>";
         }
     })
-    .catch(err => console.error("Fehler beim Laden der Benutzerliste:", err));
+    .catch(err => {
+        const userList = document.getElementById("user-list-content");
+        userList.innerHTML = "<li>Fehler beim Laden der Benutzerliste: " + err.message + "</li>";
+    });
 }
 
-// Gruppen-Dropdowns aktualisieren (für Admin-Panel)
+// Gruppen-Dropdowns aktualisieren
 function updateGroupDropdowns() {
     fetch("/users")
     .then(res => res.json())
