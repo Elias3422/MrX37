@@ -1138,5 +1138,15 @@
     "timestamp": "2025-03-21T11:18:22.239Z",
     "action": "censor-message",
     "details": "Message 18 censored"
+  },
+  {
+    "timestamp": "2025-03-21T11:29:09.988Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T11:31:11.801Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
