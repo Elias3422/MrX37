@@ -1173,5 +1173,45 @@
     "timestamp": "2025-03-21T14:43:46.118Z",
     "action": "show-time",
     "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-21T15:06:10.288Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T15:07:00.098Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T15:13:55.750Z",
+    "action": "say-hello",
+    "details": "Bot said hello"
+  },
+  {
+    "timestamp": "2025-03-21T15:13:56.586Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-21T15:13:56.809Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-21T15:13:57.322Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T15:13:58.168Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-21T15:14:01.027Z",
+    "action": "unlock-chat",
+    "details": "Chat unlocked"
   }
 ]
