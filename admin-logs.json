@@ -1028,5 +1028,15 @@
     "timestamp": "2025-03-21T09:31:34.350Z",
     "action": "change-role",
     "details": "adrian's role changed to user"
+  },
+  {
+    "timestamp": "2025-03-21T09:50:53.803Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T09:58:23.363Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
