@@ -142,5 +142,18 @@
     "timestamp": "2025-03-21T11:16:39.803Z",
     "recipients": [],
     "censored": true
+  },
+  {
+    "id": 22,
+    "username": "System",
+    "content": "c",
+    "timestamp": "2025-03-21T14:43:40.105Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 23,
+    "username": "Bot",
+    "content": "Aktuelle Zeit: 14:43:46",
+    "timestamp": "2025-03-21T14:43:46.118Z"
   }
 ]

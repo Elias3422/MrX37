@@ -1163,5 +1163,15 @@
     "timestamp": "2025-03-21T13:55:58.475Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T14:43:40.105Z",
+    "action": "announcement",
+    "details": "Announcement: c"
+  },
+  {
+    "timestamp": "2025-03-21T14:43:46.118Z",
+    "action": "show-time",
+    "details": "Bot showed time"
   }
 ]
