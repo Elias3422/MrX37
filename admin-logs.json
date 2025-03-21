@@ -943,5 +943,50 @@
     "timestamp": "2025-03-21T08:55:29.268Z",
     "action": "login",
     "details": "adrian logged in"
+  },
+  {
+    "timestamp": "2025-03-21T09:13:49.217Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T09:15:06.666Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-21T09:15:30.290Z",
+    "action": "censor-message",
+    "details": "Message 17 censored"
+  },
+  {
+    "timestamp": "2025-03-21T09:15:53.184Z",
+    "action": "announcement",
+    "details": "Announcement: Aktuelle Zeit: 10:15:06 AM ("
+  },
+  {
+    "timestamp": "2025-03-21T09:16:43.779Z",
+    "action": "edit-message",
+    "details": "Message 18 edited"
+  },
+  {
+    "timestamp": "2025-03-21T09:18:35.975Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T09:19:48.760Z",
+    "action": "censor-message",
+    "details": "Message 16 censored"
+  },
+  {
+    "timestamp": "2025-03-21T09:20:41.690Z",
+    "action": "create-group",
+    "details": "Group E created"
+  },
+  {
+    "timestamp": "2025-03-21T09:21:44.061Z",
+    "action": "add-tag",
+    "details": "H added to adrian"
   }
 ]

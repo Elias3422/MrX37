@@ -97,5 +97,32 @@
     "username": "adrian",
     "content": "wie lange noch?",
     "timestamp": "2025-03-21T08:55:47.525Z"
+  },
+  {
+    "id": 16,
+    "username": "admin",
+    "content": "Ungefähr 15 min",
+    "timestamp": "2025-03-21T09:14:18.082Z",
+    "censored": true
+  },
+  {
+    "id": 17,
+    "username": "Bot",
+    "content": "Aktuelle Zeit: 9:15:06 AM",
+    "timestamp": "2025-03-21T09:15:06.666Z",
+    "censored": true
+  },
+  {
+    "id": 18,
+    "username": "System",
+    "content": "Aktuelle Zeit: 10:15:06 AM",
+    "timestamp": "2025-03-21T09:15:53.184Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 19,
+    "username": "admin",
+    "content": "Wenn er online ist dann hab ich die ip",
+    "timestamp": "2025-03-21T09:19:28.838Z"
   }
 ]
