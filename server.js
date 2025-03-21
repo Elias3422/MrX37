@@ -172,18 +172,6 @@ app.post("/add-user", (req, res) => {
     res.json({ success: true, message: `${username} hinzugefügt.` });
 });
 
-// Admin: Benutzer löschen
-app.post("/delete-user", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username } = req.body;
-    if (!users[username]) return res.json({ success: false, message: "Benutzer nicht gefunden!" });
-    updateUserSession(username, null, true);
-    delete users[username];
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("delete-user", `${username} deleted`);
-    res.json({ success: true, message: `${username} gelöscht.` });
-});
-
 // Admin: Bann
 app.post("/ban", (req, res) => {
     if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
@@ -196,152 +184,37 @@ app.post("/ban", (req, res) => {
     res.json({ success: true, message: `${username} wurde gebannt und ausgeloggt.` });
 });
 
-// Admin: Entbannen
-app.post("/unban", (req, res) => {
+// Admin: Bot - Hallo sagen
+app.post("/say-hello", (req, res) => {
     if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username } = req.body;
-    if (!users[username]) return res.json({ success: false, message: "Benutzer nicht gefunden!" });
-    users[username].banned = false;
-    delete users[username].bannedUntil;
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("unban", `${username} unbanned`);
-    res.json({ success: true, message: `${username} wurde entbannt.` });
-});
-
-// Admin: Rolle ändern
-app.post("/change-role", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username, role } = req.body;
-    if (!users[username]) return res.json({ success: false, message: "Benutzer nicht gefunden!" });
-    if (role !== "user" && role !== "admin") return res.json({ success: false, message: "Ungültige Rolle!" });
-    users[username].role = role;
-    updateUserSession(username, { role });
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("change-role", `${username}'s role changed to ${role}`);
-    res.json({ success: true, message: `Rolle von ${username} zu ${role} geändert.` });
-});
-
-// Admin: Passwort ändern
-app.post("/change-password", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username, newPassword } = req.body;
-    if (!users[username]) return res.json({ success: false, message: "Benutzer nicht gefunden!" });
-    users[username].password = newPassword;
-    updateUserSession(username, null, true);
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("change-password", `${username}'s password changed`);
-    res.json({ success: true, message: `Passwort von ${username} geändert, Benutzer ausgeloggt.` });
-});
-
-// Admin: Stummschalten
-app.post("/mute", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username } = req.body;
-    if (!users[username]) return res.json({ success: false, message: "Benutzer nicht gefunden!" });
-    users[username].muted = true;
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("mute", `${username} muted`);
-    res.json({ success: true, message: `${username} wurde stummgeschaltet.` });
-});
-
-// Admin: Entstummen
-app.post("/unmute", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username } = req.body;
-    if (!users[username]) return res.json({ success: false, message: "Benutzer nicht gefunden!" });
-    users[username].muted = false;
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("unmute", `${username} unmuted`);
-    res.json({ success: true, message: `${username} wurde entstummt.` });
-});
-
-// Admin: Temporärer Bann
-app.post("/temp-ban", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username, duration } = req.body;
-    if (!users[username]) return res.json({ success: false, message: "Benutzer nicht gefunden!" });
-    const banUntil = new Date(Date.now() + duration * 60 * 1000).toISOString();
-    users[username].bannedUntil = banUntil;
-    updateUserSession(username, null, true);
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("temp-ban", `${username} banned until ${banUntil}`);
-    res.json({ success: true, message: `${username} wurde für ${duration} Minuten gebannt.` });
-});
-
-// Admin: IP-Bann
-app.post("/ip-ban", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username } = req.body;
-    if (!users[username]) return res.json({ success: false, message: "Benutzer nicht gefunden!" });
-    users[username].bannedIp = users[username].lastIp || "simulated-ip";
-    updateUserSession(username, null, true);
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("ip-ban", `${username} IP-banned`);
-    res.json({ success: true, message: `${username} wurde per IP gebannt.` });
-});
-
-// Admin: Chat sperren
-app.post("/lock-chat", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    settings.chatLocked = true;
-    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2));
-    logAdminAction("lock-chat", "Chat locked");
-    res.json({ success: true, message: "Chat wurde gesperrt." });
-});
-
-// Admin: Chat entsperren
-app.post("/unlock-chat", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    settings.chatLocked = false;
-    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2));
-    logAdminAction("unlock-chat", "Chat unlocked");
-    res.json({ success: true, message: "Chat wurde entsperrt." });
-});
-
-// Admin: Chat leeren
-app.post("/clear-chat", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    messages = [];
-    settings.pinnedMessage = null;
+    const message = { id: messages.length, username: "Bot", content: "Hallo zusammen!", timestamp: new Date().toISOString() };
+    messages.push(message);
     fs.writeFileSync(MESSAGES_FILE, JSON.stringify(messages, null, 2));
-    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2));
-    logAdminAction("clear-chat", "Chat cleared");
-    res.json({ success: true, message: "Chat wurde geleert." });
+    logAdminAction("say-hello", "Bot said hello");
+    res.json({ success: true, message: "Bot hat Hallo gesagt." });
 });
 
-// Admin: Nachricht bearbeiten
-app.post("/edit-message", (req, res) => {
+// Admin: Bot - Zeit anzeigen
+app.post("/show-time", (req, res) => {
     if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { id, content } = req.body;
-    const msg = messages.find(m => m.id === parseInt(id));
-    if (!msg) return res.json({ success: false, message: "Nachricht nicht gefunden!" });
-    msg.content = content;
+    const time = new Date().toLocaleTimeString();
+    const message = { id: messages.length, username: "Bot", content: `Aktuelle Zeit: ${time}`, timestamp: new Date().toISOString() };
+    messages.push(message);
     fs.writeFileSync(MESSAGES_FILE, JSON.stringify(messages, null, 2));
-    logAdminAction("edit-message", `Message ${id} edited`);
-    res.json({ success: true, message: "Nachricht bearbeitet." });
+    logAdminAction("show-time", `Bot showed time: ${time}`);
+    res.json({ success: true, message: "Bot hat die Zeit angezeigt." });
 });
 
-// Admin: Nachricht anpinnen
-app.post("/pin-message", (req, res) => {
+// Admin: Nachricht zensieren
+app.post("/censor-message", (req, res) => {
     if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
     const { id } = req.body;
     const msg = messages.find(m => m.id === parseInt(id));
     if (!msg) return res.json({ success: false, message: "Nachricht nicht gefunden!" });
-    settings.pinnedMessage = { id: msg.id, content: msg.content, username: msg.username };
-    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(settings, null, 2));
-    logAdminAction("pin-message", `Message ${id} pinned`);
-    res.json({ success: true, message: "Nachricht angepinnt." });
-});
-
-// Admin: Ankündigung senden
-app.post("/send-announcement", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { content } = req.body;
-    const message = { id: messages.length, username: "System", content: `[Ankündigung] ${content}`, timestamp: new Date().toISOString() };
-    messages.push(message);
+    msg.content = "***ZENSIERT***";
     fs.writeFileSync(MESSAGES_FILE, JSON.stringify(messages, null, 2));
-    logAdminAction("announcement", `Announcement sent: ${content}`);
-    res.json({ success: true, message: "Ankündigung gesendet." });
+    logAdminAction("censor-message", `Message ${id} censored`);
+    res.json({ success: true, message: "Nachricht wurde zensiert." });
 });
 
 // Filter für Nachrichten

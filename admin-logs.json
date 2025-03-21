@@ -1038,5 +1038,30 @@
     "timestamp": "2025-03-21T09:58:23.363Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T10:00:31.395Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T10:00:31.737Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-21T10:00:35.337Z",
+    "action": "unlock-chat",
+    "details": "Chat unlocked"
+  },
+  {
+    "timestamp": "2025-03-21T10:02:32.424Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T10:08:20.704Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
