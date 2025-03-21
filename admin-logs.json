@@ -1313,5 +1313,55 @@
     "timestamp": "2025-03-21T15:26:36.658Z",
     "action": "unlock-chat",
     "details": "Chat unlocked"
+  },
+  {
+    "timestamp": "2025-03-21T15:30:20.254Z",
+    "action": "say-hello",
+    "details": "Bot said hello"
+  },
+  {
+    "timestamp": "2025-03-21T15:30:21.408Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-21T15:30:22.832Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T15:30:23.943Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-21T15:30:26.481Z",
+    "action": "unlock-chat",
+    "details": "Chat unlocked"
+  },
+  {
+    "timestamp": "2025-03-21T15:36:21.569Z",
+    "action": "import-messages",
+    "details": "Imported 3 messages"
+  },
+  {
+    "timestamp": "2025-03-21T15:36:34.670Z",
+    "action": "censor-message",
+    "details": "Message 1 censored"
+  },
+  {
+    "timestamp": "2025-03-21T15:36:39.093Z",
+    "action": "censor-message",
+    "details": "Message 2 censored"
+  },
+  {
+    "timestamp": "2025-03-21T15:37:17.384Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T15:37:27.701Z",
+    "action": "import-messages",
+    "details": "Imported 15 messages"
   }
 ]
