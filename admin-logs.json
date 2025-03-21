@@ -933,5 +933,15 @@
     "timestamp": "2025-03-21T08:15:26.489Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T08:49:54.380Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T08:55:29.268Z",
+    "action": "login",
+    "details": "adrian logged in"
   }
 ]
