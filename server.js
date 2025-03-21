@@ -1,159 +1,58 @@
 const express = require("express");
 const session = require("express-session");
 const fs = require("fs");
-const path = require("path");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const path = require("path");
+const bodyParser = require("body-parser");
+const settings = require("./settings.json"); // Angenommene Einstellungsdatei
 
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(session({
-    secret: "super-secret-key",
-    resave: false,
-    saveUninitialized: true,
-    name: "chatSession",
-    store: new session.MemoryStore()
-}));
-
-const USERS_FILE = path.join(__dirname, "users.json");
 const MESSAGES_FILE = path.join(__dirname, "messages.json");
-const LOGS_FILE = path.join(__dirname, "admin-logs.json");
-const SETTINGS_FILE = path.join(__dirname, "settings.json");
+const users = {}; // Angenommene Benutzerverwaltung
 
-const initializeFile = (filePath, defaultContent) => {
-    try {
-        if (!fs.existsSync(filePath)) {
-            fs.writeFileSync(filePath, JSON.stringify(defaultContent, null, 2));
-        }
-        const content = fs.readFileSync(filePath, "utf8");
-        return content ? JSON.parse(content) : defaultContent;
-    } catch (err) {
-        console.error(`Fehler beim Initialisieren von ${filePath}:`, err);
-        return defaultContent; // Fallback auf Standardwert
-    }
-};
+// Middleware für Body Parsing
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-let defaultSettings = { theme: "light", pinnedMessage: null, chatLocked: false, autoMod: { maxMessages: 10 }, groups: {}, timer: null };
-let settings = initializeFile(SETTINGS_FILE, defaultSettings);
-if (!settings.autoMod) settings.autoMod = { maxMessages: 10 };
+// Simulierte Daten für Nachrichten
+let messages = JSON.parse(fs.readFileSync(MESSAGES_FILE, "utf-8") || "[]");
 
-let users = initializeFile(USERS_FILE, { "admin": { password: "admin123", role: "admin" } });
-let messages = initializeFile(MESSAGES_FILE, []); // Sicherstellen, dass messages immer ein Array ist
-let adminLogs = initializeFile(LOGS_FILE, []);
-
-const logAdminAction = (action, details) => {
-    adminLogs.push({ timestamp: new Date().toISOString(), action, details });
-    fs.writeFileSync(LOGS_FILE, JSON.stringify(adminLogs, null, 2));
+const filterWords = (content) => {
+    // Hier kannst du eine Zensur- oder Filterlogik einbauen
+    return content; // Für Demo: Keine Filterung
 };
 
 const updateLastActivity = (username) => {
-    if (users[username]) {
-        users[username].lastActivity = new Date().toISOString();
-        fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    }
+    // Update der letzten Aktivität des Benutzers
+    users[username].lastActivity = new Date().toISOString();
 };
 
-const updateUserSession = (username, newData, destroy) => {
-    const sessionId = users[username] && users[username].sessionId ? users[username].sessionId : null;
-    if (sessionId && app.get("sessionStore")) {
-        app.get("sessionStore").get(sessionId, (err, session) => {
-            if (err || !session) return;
-            if (destroy) {
-                app.get("sessionStore").destroy(sessionId, (err) => {
-                    if (err) console.error("Fehler beim Zerstören der Session:", err);
-                    if (users[username]) {
-                        delete users[username].sessionId;
-                        fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-                    }
-                });
-            } else {
-                session.user = { ...session.user, ...newData };
-                app.get("sessionStore").set(sessionId, session, (err) => {
-                    if (err) console.error("Fehler beim Aktualisieren der Session:", err);
-                });
-            }
-        });
-    }
-};
-
-// Login-Seite
-app.get("/", (req, res) => {
-    if (req.session.user) return res.redirect("/chat");
-    res.sendFile(path.join(__dirname, "public/index.html"));
-});
-
-// Login
-app.post("/login", (req, res) => {
-    const { username, password } = req.body;
-    const user = users[username];
-    if (user && user.password === password && !user.banned && (!user.bannedUntil || new Date(user.bannedUntil) < new Date())) {
-        req.session.user = { username, role: user.role, loggedIn: true };
-        user.lastIp = req.ip || "simulated-ip";
-        user.loginHistory = user.loginHistory || [];
-        user.loginHistory.push(new Date().toISOString());
-        user.sessionId = req.sessionID;
-        updateLastActivity(username);
-        fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-        logAdminAction("login", `${username} logged in`);
-        return res.json({ success: true, role: user.role });
-    }
-    res.json({ success: false, message: "Falsche Anmeldedaten oder gebannt!" });
-});
-
-// Chat-Seite
-app.get("/chat", (req, res) => {
-    if (!req.session.user) return res.redirect("/");
-    res.sendFile(path.join(__dirname, "public/chat.html"));
-});
-
-// Logout
-app.post("/logout", (req, res) => {
-    if (req.session.user) {
-        const username = req.session.user.username;
-        req.session.destroy(() => {
-            if (users[username]) {
-                delete users[username].sessionId;
-                fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-            }
-            res.json({ success: true, message: "Ausgeloggt." });
-        });
-    } else {
-        res.json({ success: false, message: "Nicht eingeloggt!" });
-    }
-});
-
-// Rolle prüfen
-app.get("/check-role", (req, res) => {
-    if (!req.session.user) return res.status(401).json({ success: false, role: "none" });
-    res.json({ success: true, role: req.session.user.role });
-});
-
-// Nachrichten senden (mit Privat-Chat)
-app.post("/send-message", (req, res) => {
+// Nachrichten senden (auch private)
+app.post("/send-private-message", (req, res) => {
     if (!req.session.user || users[req.session.user.username].muted || settings.chatLocked) {
         return res.status(403).json({ success: false, message: "Keine Berechtigung!" });
     }
-    const { content } = req.body;
-    const userMessages = (messages || []).filter(m => m.username === req.session.user.username).length; // Fallback auf leeres Array
+
+    const { content, recipient } = req.body;
+
+    // Überprüfe, ob der Empfänger existiert
+    if (!users[recipient]) {
+        return res.status(400).json({ success: false, message: "Empfänger existiert nicht!" });
+    }
+
+    // Nachrichtenbegrenzung
+    const userMessages = messages.filter(m => m.username === req.session.user.username).length;
     const maxMessages = settings.autoMod.maxMessages || 10;
     if (userMessages >= maxMessages) return res.json({ success: false, message: "Nachrichtenlimit erreicht!" });
 
     const filteredContent = filterWords(content);
+
     const message = {
         id: messages.length,
         username: req.session.user.username,
         content: filteredContent,
-        timestamp: new Date().toISOString(),
-        recipients: []
+        recipient, // Empfänger hinzugefügt
+        timestamp: new Date().toISOString()
     };
-
-    const mentionRegex = /@(\w+)/g;
-    const mentions = [...(filteredContent.matchAll(mentionRegex) || [])].map(match => match[1]);
-    if (mentions.length > 0) {
-        message.recipients = [req.session.user.username, ...mentions.filter(m => users[m])];
-    }
 
     messages.push(message);
     updateLastActivity(req.session.user.username);
@@ -161,45 +60,57 @@ app.post("/send-message", (req, res) => {
     res.json({ success: true });
 });
 
-// Nachrichten laden (nur sichtbare anzeigen)
+// Nachrichten abrufen (nur eigene oder private Nachrichten)
 app.get("/messages", (req, res) => {
-    if (!req.session.user) return res.status(403).json({ success: false });
-    const visibleMessages = (messages || []).filter(msg => 
-        msg.recipients.length === 0 || 
-        msg.recipients.includes(req.session.user.username)
-    );
-    res.json({ messages: visibleMessages, pinnedMessage: settings.pinnedMessage, theme: settings.theme });
+    if (!req.session.user) return res.status(401).json({ success: false, message: "Nicht eingeloggt!" });
+
+    // Filtere die Nachrichten, sodass nur eigene oder private Nachrichten angezeigt werden
+    const userMessages = messages.filter(m => m.username === req.session.user.username || m.recipient === req.session.user.username);
+
+    res.json({
+        success: true,
+        messages: userMessages.filter(m => !m.censored),  // Nur nicht zensierte Nachrichten
+        pinnedMessage: settings.pinnedMessage,
+        theme: settings.theme
+    });
 });
 
-// Benutzerstatus
-app.get("/admin/users-status", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const userList = Object.keys(users).map(username => ({
-        username,
-        role: users[username].role,
-        online: !!users[username].sessionId,
-        tags: users[username].tags || [],
-        verified: users[username].verified || false,
-        group: users[username].group || ""
-    }));
-    res.json({ success: true, users: userList, groups: settings.groups });
+// Registrierung eines neuen Benutzers
+app.post("/register", (req, res) => {
+    const { username, password } = req.body;
+    
+    // Überprüfe, ob der Benutzer bereits existiert
+    if (users[username]) {
+        return res.status(400).json({ success: false, message: "Benutzername bereits vergeben!" });
+    }
+
+    // Benutzer hinzufügen
+    users[username] = { username, password, muted: false, lastActivity: new Date().toISOString() };
+    res.json({ success: true, message: "Benutzer registriert!" });
 });
 
-// Admin: Benutzer hinzufügen
-app.post("/add-user", (req, res) => {
-    if (!req.session.user || req.session.user.role !== "admin") return res.status(403).json({ success: false });
-    const { username, password, role, group } = req.body;
-    if (users[username]) return res.json({ success: false, message: "Benutzer existiert bereits!" });
-    users[username] = { password, role: role || "user", group: group || "" };
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
-    logAdminAction("add-user", `${username} added as ${role}`);
-    res.json({ success: true, message: `${username} hinzugefügt.` });
+// Benutzeranmeldung
+app.post("/login", (req, res) => {
+    const { username, password } = req.body;
+
+    // Überprüfe, ob Benutzer existiert und Passwort korrekt ist
+    if (!users[username] || users[username].password !== password) {
+        return res.status(401).json({ success: false, message: "Ungültige Anmeldedaten!" });
+    }
+
+    // Sitzung setzen
+    req.session.user = users[username];
+    res.json({ success: true, message: "Erfolgreich eingeloggt!" });
 });
 
-// Filter für Nachrichten
-const filterWords = (text) => {
-    const badWords = ["idiot", "dumm"];
-    return badWords.reduce((acc, word) => acc.replace(new RegExp(word, "gi"), "***"), text);
-};
+// Benutzer abmelden
+app.post("/logout", (req, res) => {
+    req.session.destroy();
+    res.json({ success: true, message: "Erfolgreich abgemeldet!" });
+});
 
-app.listen(PORT, () => console.log(`Server läuft auf Port ${PORT}`));
+// Server starten
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server läuft auf http://localhost:${PORT}`);
+});

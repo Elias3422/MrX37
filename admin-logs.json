@@ -1108,5 +1108,35 @@
     "timestamp": "2025-03-21T11:13:00.096Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T11:16:28.286Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T11:17:44.404Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T11:18:06.191Z",
+    "action": "censor-message",
+    "details": "Message 21 censored"
+  },
+  {
+    "timestamp": "2025-03-21T11:18:11.085Z",
+    "action": "censor-message",
+    "details": "Message 20 censored"
+  },
+  {
+    "timestamp": "2025-03-21T11:18:18.401Z",
+    "action": "censor-message",
+    "details": "Message 19 censored"
+  },
+  {
+    "timestamp": "2025-03-21T11:18:22.239Z",
+    "action": "censor-message",
+    "details": "Message 18 censored"
   }
 ]

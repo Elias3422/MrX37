@@ -116,20 +116,31 @@
     "username": "admin",
     "content": "F",
     "timestamp": "2025-03-21T11:06:48.081Z",
-    "recipients": []
+    "recipients": [],
+    "censored": true
   },
   {
     "id": 19,
     "username": "admin",
     "content": "",
     "timestamp": "2025-03-21T11:13:19.487Z",
-    "recipients": []
+    "recipients": [],
+    "censored": true
   },
   {
     "id": 20,
     "username": "admin",
     "content": "",
     "timestamp": "2025-03-21T11:13:19.733Z",
-    "recipients": []
+    "recipients": [],
+    "censored": true
+  },
+  {
+    "id": 21,
+    "username": "admin",
+    "content": "D",
+    "timestamp": "2025-03-21T11:16:39.803Z",
+    "recipients": [],
+    "censored": true
   }
 ]
