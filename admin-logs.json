@@ -653,5 +653,40 @@
     "timestamp": "2025-03-21T07:29:05.836Z",
     "action": "verify-user",
     "details": "adrian verified"
+  },
+  {
+    "timestamp": "2025-03-21T07:34:07.186Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T07:36:26.565Z",
+    "action": "announcement",
+    "details": "Announcement: 172.17.0.2  = 958459930875146240"
+  },
+  {
+    "timestamp": "2025-03-21T07:39:32.596Z",
+    "action": "login",
+    "details": "adrian logged in"
+  },
+  {
+    "timestamp": "2025-03-21T07:41:16.482Z",
+    "action": "pin-message",
+    "details": "Message 3 pinned"
+  },
+  {
+    "timestamp": "2025-03-21T07:42:29.015Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-21T07:42:31.981Z",
+    "action": "change-theme",
+    "details": "Theme changed to light"
+  },
+  {
+    "timestamp": "2025-03-21T07:42:34.516Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
   }
 ]

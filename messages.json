@@ -4,5 +4,54 @@
     "username": "adrian",
     "content": "hallo",
     "timestamp": "2025-03-21T07:28:44.916Z"
+  },
+  {
+    "id": 1,
+    "username": "admin",
+    "content": "Ich habe beide ips",
+    "timestamp": "2025-03-21T07:32:07.889Z"
+  },
+  {
+    "id": 2,
+    "username": "adrian",
+    "content": "schick",
+    "timestamp": "2025-03-21T07:32:14.785Z"
+  },
+  {
+    "id": 3,
+    "username": "System",
+    "content": "172.17.0.2  = 958459930875146240",
+    "timestamp": "2025-03-21T07:36:26.565Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 4,
+    "username": "adrian",
+    "content": "die andere?",
+    "timestamp": "2025-03-21T07:36:50.479Z"
+  },
+  {
+    "id": 5,
+    "username": "adrian",
+    "content": "und ist das die erste oder die 2te",
+    "timestamp": "2025-03-21T07:37:43.882Z"
+  },
+  {
+    "id": 6,
+    "username": "admin",
+    "content": "Die zweite guck ich grade",
+    "timestamp": "2025-03-21T07:39:06.179Z"
+  },
+  {
+    "id": 7,
+    "username": "adrian",
+    "content": "okay also das was du mir jz geschickt hast ist die 1 nh",
+    "timestamp": "2025-03-21T07:40:07.295Z"
+  },
+  {
+    "id": 8,
+    "username": "admin",
+    "content": "Ja",
+    "timestamp": "2025-03-21T07:40:32.044Z"
   }
 ]

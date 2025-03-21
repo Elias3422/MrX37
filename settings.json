@@ -1,6 +1,12 @@
 {
   "theme": "dark",
-  "pinnedMessage": null,
+  "pinnedMessage": {
+    "id": 3,
+    "username": "System",
+    "content": "172.17.0.2  = 958459930875146240",
+    "timestamp": "2025-03-21T07:36:26.565Z",
+    "isAnnouncement": true
+  },
   "chatLocked": false,
   "autoMod": {
     "maxMessages": 1000
