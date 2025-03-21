@@ -82,12 +82,14 @@
     "id": 13,
     "username": "adrian",
     "content": "Du hund",
-    "timestamp": "2025-03-21T08:02:20.468Z"
+    "timestamp": "2025-03-21T08:02:20.468Z",
+    "censored": true
   },
   {
     "id": 14,
     "username": "admin",
     "content": "?",
-    "timestamp": "2025-03-21T08:02:28.391Z"
+    "timestamp": "2025-03-21T08:02:28.391Z",
+    "censored": true
   }
 ]

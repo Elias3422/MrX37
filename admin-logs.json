@@ -743,5 +743,195 @@
     "timestamp": "2025-03-21T08:04:38.404Z",
     "action": "change-role",
     "details": "adrian's role changed to admin"
+  },
+  {
+    "timestamp": "2025-03-21T08:05:31.345Z",
+    "action": "censor-message",
+    "details": "Message 13 censored"
+  },
+  {
+    "timestamp": "2025-03-21T08:05:40.549Z",
+    "action": "censor-message",
+    "details": "Message 14 censored"
+  },
+  {
+    "timestamp": "2025-03-21T08:06:52.214Z",
+    "action": "login",
+    "details": "adrian logged in"
+  },
+  {
+    "timestamp": "2025-03-21T08:07:16.814Z",
+    "action": "change-role",
+    "details": "adrian's role changed to user"
+  },
+  {
+    "timestamp": "2025-03-21T08:07:46.064Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T08:07:58.973Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:03.291Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:06.641Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:12.735Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:14.354Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:14.965Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:15.890Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:16.988Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:19.177Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:19.829Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:19.998Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:21.692Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:22.462Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:22.691Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:22.758Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:22.912Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:23.593Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:23.768Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:29.825Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:46.666Z",
+    "action": "login",
+    "details": "adrian logged in"
+  },
+  {
+    "timestamp": "2025-03-21T08:08:46.895Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-21T08:09:23.858Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T08:09:30.394Z",
+    "action": "change-theme",
+    "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-21T08:09:59.396Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T08:09:59.799Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T08:10:01.312Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T08:10:01.641Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T08:10:08.340Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:10:26.114Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T08:10:35.443Z",
+    "action": "import-messages",
+    "details": "Imported undefined messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:11:47.840Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T08:13:29.782Z",
+    "action": "import-messages",
+    "details": "Imported 15 messages"
+  },
+  {
+    "timestamp": "2025-03-21T08:15:26.489Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
