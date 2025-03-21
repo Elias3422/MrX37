@@ -77,5 +77,17 @@
     "username": "admin",
     "content": "Ok",
     "timestamp": "2025-03-21T07:51:20.527Z"
+  },
+  {
+    "id": 13,
+    "username": "adrian",
+    "content": "Du hund",
+    "timestamp": "2025-03-21T08:02:20.468Z"
+  },
+  {
+    "id": 14,
+    "username": "admin",
+    "content": "?",
+    "timestamp": "2025-03-21T08:02:28.391Z"
   }
 ]
