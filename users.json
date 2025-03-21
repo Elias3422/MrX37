@@ -13,12 +13,29 @@
       "2025-03-20T20:32:22.343Z",
       "2025-03-20T20:45:12.884Z",
       "2025-03-20T20:46:06.981Z",
-      "2025-03-21T06:19:25.492Z"
+      "2025-03-21T06:19:25.492Z",
+      "2025-03-21T07:24:18.801Z",
+      "2025-03-21T07:26:33.365Z"
     ],
-    "lastActivity": "2025-03-21T06:19:25.498Z"
+    "lastActivity": "2025-03-21T07:26:33.365Z"
   },
   "user1": {
     "password": "userPasswort",
     "role": "user"
+  },
+  "adrian": {
+    "password": "qwertzuiop",
+    "role": "user",
+    "banned": false,
+    "group": null,
+    "tags": [],
+    "notes": [],
+    "lastIp": "::ffff:127.0.0.1",
+    "loginHistory": [
+      "2025-03-21T07:26:00.445Z",
+      "2025-03-21T07:28:41.301Z"
+    ],
+    "lastActivity": "2025-03-21T07:28:44.916Z",
+    "verified": true
   }
 }

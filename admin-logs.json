@@ -603,5 +603,55 @@
     "timestamp": "2025-03-21T06:19:36.687Z",
     "action": "delete-user",
     "details": "E deleted"
+  },
+  {
+    "timestamp": "2025-03-21T07:24:18.801Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T07:24:39.635Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T07:24:40.681Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-21T07:25:19.090Z",
+    "action": "add-user",
+    "details": "adrian added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-21T07:26:00.445Z",
+    "action": "login",
+    "details": "adrian logged in"
+  },
+  {
+    "timestamp": "2025-03-21T07:26:33.366Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T07:26:43.725Z",
+    "action": "lock-chat",
+    "details": "Chat locked"
+  },
+  {
+    "timestamp": "2025-03-21T07:26:46.991Z",
+    "action": "unlock-chat",
+    "details": "Chat unlocked"
+  },
+  {
+    "timestamp": "2025-03-21T07:28:41.301Z",
+    "action": "login",
+    "details": "adrian logged in"
+  },
+  {
+    "timestamp": "2025-03-21T07:29:05.836Z",
+    "action": "verify-user",
+    "details": "adrian verified"
   }
 ]
