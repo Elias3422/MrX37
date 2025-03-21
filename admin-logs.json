@@ -1158,5 +1158,10 @@
     "timestamp": "2025-03-21T13:37:45.547Z",
     "action": "unlock-chat",
     "details": "Chat unlocked"
+  },
+  {
+    "timestamp": "2025-03-21T13:55:58.475Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
