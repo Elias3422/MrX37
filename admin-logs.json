@@ -988,5 +988,45 @@
     "timestamp": "2025-03-21T09:21:44.061Z",
     "action": "add-tag",
     "details": "H added to adrian"
+  },
+  {
+    "timestamp": "2025-03-21T09:27:14.483Z",
+    "action": "login",
+    "details": "adrian logged in"
+  },
+  {
+    "timestamp": "2025-03-21T09:27:37.271Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T09:28:09.788Z",
+    "action": "change-role",
+    "details": "adrian's role changed to admin"
+  },
+  {
+    "timestamp": "2025-03-21T09:28:57.866Z",
+    "action": "change-role",
+    "details": "adrian's role changed to admin"
+  },
+  {
+    "timestamp": "2025-03-21T09:29:57.489Z",
+    "action": "ban",
+    "details": "adrian banned"
+  },
+  {
+    "timestamp": "2025-03-21T09:30:39.071Z",
+    "action": "unban",
+    "details": "adrian unbanned"
+  },
+  {
+    "timestamp": "2025-03-21T09:31:19.593Z",
+    "action": "login",
+    "details": "adrian logged in"
+  },
+  {
+    "timestamp": "2025-03-21T09:31:34.350Z",
+    "action": "change-role",
+    "details": "adrian's role changed to user"
   }
 ]
