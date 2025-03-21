@@ -1063,5 +1063,35 @@
     "timestamp": "2025-03-21T10:08:20.704Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T10:12:55.795Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T10:13:01.262Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-21T10:13:09.770Z",
+    "action": "import-messages",
+    "details": "Imported 17 messages"
+  },
+  {
+    "timestamp": "2025-03-21T10:13:29.389Z",
+    "action": "censor-message",
+    "details": "Message 16 censored"
+  },
+  {
+    "timestamp": "2025-03-21T10:17:32.285Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-21T10:20:40.875Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]

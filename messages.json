@@ -1,14 +1,114 @@
 [
   {
     "id": 0,
-    "username": "admin",
-    "content": "D",
-    "timestamp": "2025-03-21T10:01:26.504Z"
+    "username": "adrian",
+    "content": "hallo",
+    "timestamp": "2025-03-21T07:28:44.916Z"
   },
   {
     "id": 1,
     "username": "admin",
-    "content": "G",
-    "timestamp": "2025-03-21T10:08:41.280Z"
+    "content": "Ich habe beide ips",
+    "timestamp": "2025-03-21T07:32:07.889Z"
+  },
+  {
+    "id": 2,
+    "username": "adrian",
+    "content": "schick",
+    "timestamp": "2025-03-21T07:32:14.785Z"
+  },
+  {
+    "id": 3,
+    "username": "System",
+    "content": "172.17.0.2  = 958459930875146240",
+    "timestamp": "2025-03-21T07:36:26.565Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 4,
+    "username": "adrian",
+    "content": "die andere?",
+    "timestamp": "2025-03-21T07:36:50.479Z"
+  },
+  {
+    "id": 5,
+    "username": "adrian",
+    "content": "und ist das die erste oder die 2te",
+    "timestamp": "2025-03-21T07:37:43.882Z"
+  },
+  {
+    "id": 6,
+    "username": "admin",
+    "content": "Die zweite guck ich grade",
+    "timestamp": "2025-03-21T07:39:06.179Z"
+  },
+  {
+    "id": 7,
+    "username": "adrian",
+    "content": "okay also das was du mir jz geschickt hast ist die 1 nh",
+    "timestamp": "2025-03-21T07:40:07.295Z"
+  },
+  {
+    "id": 8,
+    "username": "admin",
+    "content": "Ja",
+    "timestamp": "2025-03-21T07:40:32.044Z"
+  },
+  {
+    "id": 9,
+    "username": "adrian",
+    "content": "okay",
+    "timestamp": "2025-03-21T07:43:21.815Z"
+  },
+  {
+    "id": 10,
+    "username": "admin",
+    "content": "also von @romino79",
+    "timestamp": "2025-03-21T07:44:48.220Z"
+  },
+  {
+    "id": 11,
+    "username": "adrian",
+    "content": "Ja",
+    "timestamp": "2025-03-21T07:51:11.144Z"
+  },
+  {
+    "id": 12,
+    "username": "admin",
+    "content": "Ok",
+    "timestamp": "2025-03-21T07:51:20.527Z"
+  },
+  {
+    "id": 13,
+    "username": "adrian",
+    "content": "Du hund",
+    "timestamp": "2025-03-21T08:02:20.468Z",
+    "censored": true
+  },
+  {
+    "id": 14,
+    "username": "admin",
+    "content": "?",
+    "timestamp": "2025-03-21T08:02:28.391Z",
+    "censored": true
+  },
+  {
+    "id": 15,
+    "username": "adrian",
+    "content": "wie lange noch?",
+    "timestamp": "2025-03-21T08:55:47.525Z"
+  },
+  {
+    "id": 16,
+    "username": "admin",
+    "content": "Ungefähr 15 min",
+    "timestamp": "2025-03-21T09:14:18.082Z",
+    "censored": true
+  },
+  {
+    "id": 17,
+    "username": "admin",
+    "content": "Wenn er online ist habe ich die ip",
+    "timestamp": "2025-03-21T10:13:56.491Z"
   }
 ]
