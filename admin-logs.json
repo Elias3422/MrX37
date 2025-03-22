@@ -1363,5 +1363,10 @@
     "timestamp": "2025-03-21T15:37:27.701Z",
     "action": "import-messages",
     "details": "Imported 15 messages"
+  },
+  {
+    "timestamp": "2025-03-22T12:25:33.223Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
