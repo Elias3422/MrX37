@@ -1508,5 +1508,20 @@
     "timestamp": "2025-03-23T09:02:05.336Z",
     "action": "delete-user",
     "details": "adrian deleted"
+  },
+  {
+    "timestamp": "2025-03-23T09:02:41.235Z",
+    "action": "add-user",
+    "details": "adrian added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-23T09:03:03.396Z",
+    "action": "import-messages",
+    "details": "Imported 15 messages"
+  },
+  {
+    "timestamp": "2025-03-23T09:03:14.815Z",
+    "action": "verify-user",
+    "details": "adrian verified"
   }
 ]

@@ -58,5 +58,14 @@
   "user1": {
     "password": "userPasswort",
     "role": "user"
+  },
+  "adrian": {
+    "password": "qwertzuiop",
+    "role": "user",
+    "banned": false,
+    "group": null,
+    "tags": [],
+    "notes": [],
+    "verified": true
   }
 }
