@@ -1368,5 +1368,40 @@
     "timestamp": "2025-03-22T12:25:33.223Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-23T08:04:13.868Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-23T08:04:36.843Z",
+    "action": "ban",
+    "details": "adrian banned"
+  },
+  {
+    "timestamp": "2025-03-23T08:05:13.191Z",
+    "action": "add-note",
+    "details": "Note added to adrian: Gebannt "
+  },
+  {
+    "timestamp": "2025-03-23T08:05:31.312Z",
+    "action": "add-tag",
+    "details": "Gebant added to adrian"
+  },
+  {
+    "timestamp": "2025-03-23T08:05:38.988Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-23T08:08:36.099Z",
+    "action": "add-user",
+    "details": "user23 added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-23T08:10:59.556Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
