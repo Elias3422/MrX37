@@ -1523,5 +1523,10 @@
     "timestamp": "2025-03-23T09:03:14.815Z",
     "action": "verify-user",
     "details": "adrian verified"
+  },
+  {
+    "timestamp": "2025-03-23T09:16:16.882Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
