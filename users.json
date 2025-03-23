@@ -51,7 +51,7 @@
       "2025-03-23T08:31:23.988Z",
       "2025-03-23T08:34:07.088Z"
     ],
-    "lastActivity": "2025-03-23T08:34:07.088Z",
+    "lastActivity": "2025-03-23T08:50:03.090Z",
     "verified": true,
     "sessionId": "iTKOIIsQcSKrz0B7YoviRxZmgR7dYbcI"
   },
@@ -96,8 +96,9 @@
     "notes": [],
     "lastIp": "::ffff:127.0.0.1",
     "loginHistory": [
-      "2025-03-23T08:28:22.191Z"
+      "2025-03-23T08:28:22.191Z",
+      "2025-03-23T08:43:23.215Z"
     ],
-    "lastActivity": "2025-03-23T08:37:47.785Z"
+    "lastActivity": "2025-03-23T08:43:23.215Z"
   }
 }

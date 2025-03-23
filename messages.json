@@ -46,7 +46,38 @@
   {
     "id": 7,
     "username": "user23",
-    "content": "DAZN 2",
+    "content": "DAZN 23",
     "timestamp": "2025-03-23T08:37:47.785Z"
+  },
+  {
+    "id": 8,
+    "username": "admin",
+    "content": "Dazn 1 : https://ogy.de/DAZN1",
+    "timestamp": "2025-03-23T08:40:35.400Z"
+  },
+  {
+    "id": 9,
+    "username": "admin",
+    "content": "Klappt der link?",
+    "timestamp": "2025-03-23T08:42:34.783Z"
+  },
+  {
+    "id": 10,
+    "username": "user23",
+    "content": "Ja",
+    "timestamp": "2025-03-23T08:43:13.783Z"
+  },
+  {
+    "id": 11,
+    "username": "System",
+    "content": "DAZN 23 haben wir nicht ",
+    "timestamp": "2025-03-23T08:45:45.297Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 12,
+    "username": "admin",
+    "content": "Sky Sport 1: https://ogy.de/SkySport1",
+    "timestamp": "2025-03-23T08:50:03.090Z"
   }
 ]

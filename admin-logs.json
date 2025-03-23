@@ -1453,5 +1453,20 @@
     "timestamp": "2025-03-23T08:35:42.926Z",
     "action": "announcement",
     "details": "Announcement: Den genauen Namen "
+  },
+  {
+    "timestamp": "2025-03-23T08:41:57.790Z",
+    "action": "edit-message",
+    "details": "Message 7 edited"
+  },
+  {
+    "timestamp": "2025-03-23T08:43:23.216Z",
+    "action": "login",
+    "details": "user23 logged in"
+  },
+  {
+    "timestamp": "2025-03-23T08:45:45.297Z",
+    "action": "announcement",
+    "details": "Announcement: DAZN 23 haben wir nicht "
   }
 ]
