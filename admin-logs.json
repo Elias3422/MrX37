@@ -1408,5 +1408,50 @@
     "timestamp": "2025-03-23T08:22:53.788Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-23T08:28:22.191Z",
+    "action": "login",
+    "details": "user23 logged in"
+  },
+  {
+    "timestamp": "2025-03-23T08:31:19.044Z",
+    "action": "announcement",
+    "details": "Announcement: DE | SPORT (4) DA ZN DE: DAZN 1 Bar HD+ DE: DAZN 1 Bar HDI DA ZN DE: DAZN 2 Bar HD+ DA ZN DE: DAZN 2 Bar HD DE | DAZN (22) DE | DAZN BUNDESLIGA (10) DE | DAZN LALIGA (10) DE | DAZN SERIE A (10) DE | DAZN LIGUE 1 (10) > ☐ DE | DAZN GROUP (30) ☐ DE | DAZN EVENT (30)"
+  },
+  {
+    "timestamp": "2025-03-23T08:31:23.988Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-23T08:34:07.089Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-23T08:34:23.085Z",
+    "action": "edit-message",
+    "details": "Message 4 edited"
+  },
+  {
+    "timestamp": "2025-03-23T08:34:46.885Z",
+    "action": "edit-message",
+    "details": "Message 4 edited"
+  },
+  {
+    "timestamp": "2025-03-23T08:34:51.929Z",
+    "action": "edit-message",
+    "details": "Message 4 edited"
+  },
+  {
+    "timestamp": "2025-03-23T08:34:58.209Z",
+    "action": "edit-message",
+    "details": "Message 4 edited"
+  },
+  {
+    "timestamp": "2025-03-23T08:35:42.926Z",
+    "action": "announcement",
+    "details": "Announcement: Den genauen Namen "
   }
 ]

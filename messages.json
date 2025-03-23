@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "id": 0,
+    "username": "user23",
+    "content": "Dazn",
+    "timestamp": "2025-03-23T08:29:41.394Z"
+  },
+  {
+    "id": 1,
+    "username": "user23",
+    "content": "Sport",
+    "timestamp": "2025-03-23T08:29:50.344Z"
+  },
+  {
+    "id": 2,
+    "username": "user23",
+    "content": "Sky Sport 1",
+    "timestamp": "2025-03-23T08:30:23.229Z"
+  },
+  {
+    "id": 3,
+    "username": "user23",
+    "content": "Dazn",
+    "timestamp": "2025-03-23T08:30:31.787Z"
+  },
+  {
+    "id": 4,
+    "username": "System",
+    "content": "DE: DAZN 1 Bar HD+                        DE: DAZN 2 Bar HD+",
+    "timestamp": "2025-03-23T08:31:19.044Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 5,
+    "username": "System",
+    "content": "Den genauen Namen ",
+    "timestamp": "2025-03-23T08:35:42.926Z",
+    "isAnnouncement": true
+  },
+  {
+    "id": 6,
+    "username": "user23",
+    "content": "DAZN 1",
+    "timestamp": "2025-03-23T08:37:42.651Z"
+  },
+  {
+    "id": 7,
+    "username": "user23",
+    "content": "DAZN 2",
+    "timestamp": "2025-03-23T08:37:47.785Z"
+  }
+]
