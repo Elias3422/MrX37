@@ -58,47 +58,5 @@
   "user1": {
     "password": "userPasswort",
     "role": "user"
-  },
-  "adrian": {
-    "password": "qwertzuiop",
-    "role": "user",
-    "banned": true,
-    "group": null,
-    "tags": [
-      "H",
-      "Gebant"
-    ],
-    "notes": [
-      "Gebannt "
-    ],
-    "lastIp": "::ffff:127.0.0.1",
-    "loginHistory": [
-      "2025-03-21T07:26:00.445Z",
-      "2025-03-21T07:28:41.301Z",
-      "2025-03-21T07:39:32.595Z",
-      "2025-03-21T07:51:05.199Z",
-      "2025-03-21T08:00:34.597Z",
-      "2025-03-21T08:06:52.213Z",
-      "2025-03-21T08:08:46.666Z",
-      "2025-03-21T08:55:29.267Z",
-      "2025-03-21T09:27:14.483Z",
-      "2025-03-21T09:31:19.593Z"
-    ],
-    "lastActivity": "2025-03-21T09:31:19.593Z",
-    "verified": true
-  },
-  "user23": {
-    "password": "2025",
-    "role": "user",
-    "banned": false,
-    "group": null,
-    "tags": [],
-    "notes": [],
-    "lastIp": "::ffff:127.0.0.1",
-    "loginHistory": [
-      "2025-03-23T08:28:22.191Z",
-      "2025-03-23T08:43:23.215Z"
-    ],
-    "lastActivity": "2025-03-23T08:43:23.215Z"
   }
 }

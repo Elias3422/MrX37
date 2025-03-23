@@ -1468,5 +1468,45 @@
     "timestamp": "2025-03-23T08:45:45.297Z",
     "action": "announcement",
     "details": "Announcement: DAZN 23 haben wir nicht "
+  },
+  {
+    "timestamp": "2025-03-23T08:51:35.077Z",
+    "action": "change-role",
+    "details": "user23's role changed to admin"
+  },
+  {
+    "timestamp": "2025-03-23T08:51:43.079Z",
+    "action": "change-role",
+    "details": "user23's role changed to admin"
+  },
+  {
+    "timestamp": "2025-03-23T08:56:28.159Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-23T08:56:41.900Z",
+    "action": "censor-message",
+    "details": "Message 13 censored"
+  },
+  {
+    "timestamp": "2025-03-23T08:57:56.411Z",
+    "action": "change-role",
+    "details": "user23's role changed to user"
+  },
+  {
+    "timestamp": "2025-03-23T08:58:02.842Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-23T09:01:21.731Z",
+    "action": "delete-user",
+    "details": "user23 deleted"
+  },
+  {
+    "timestamp": "2025-03-23T09:02:05.336Z",
+    "action": "delete-user",
+    "details": "adrian deleted"
   }
 ]
