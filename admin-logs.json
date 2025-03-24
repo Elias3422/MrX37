@@ -1618,5 +1618,80 @@
     "timestamp": "2025-03-24T08:06:36.971Z",
     "action": "change-theme",
     "details": "Theme changed to dark"
+  },
+  {
+    "timestamp": "2025-03-24T08:08:06.661Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-24T08:08:58.245Z",
+    "action": "ban",
+    "details": "Flo banned"
+  },
+  {
+    "timestamp": "2025-03-24T08:09:16.972Z",
+    "action": "unban",
+    "details": "Flo unbanned"
+  },
+  {
+    "timestamp": "2025-03-24T08:10:07.237Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-03-24T08:10:18.242Z",
+    "action": "delete-user",
+    "details": "Flo deleted"
+  },
+  {
+    "timestamp": "2025-03-24T08:10:39.139Z",
+    "action": "add-user",
+    "details": "Flo added with role user and group none"
+  },
+  {
+    "timestamp": "2025-03-24T08:10:46.671Z",
+    "action": "verify-user",
+    "details": "Flo verified"
+  },
+  {
+    "timestamp": "2025-03-24T08:11:08.797Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-24T08:11:12.491Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-24T08:11:13.526Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-24T08:11:15.467Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-24T08:11:17.279Z",
+    "action": "show-time",
+    "details": "Bot showed time"
+  },
+  {
+    "timestamp": "2025-03-24T08:11:22.890Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-03-24T08:14:00.093Z",
+    "action": "login",
+    "details": "Flo logged in"
+  },
+  {
+    "timestamp": "2025-03-24T08:17:53.671Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
