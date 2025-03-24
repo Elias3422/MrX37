@@ -52,5 +52,11 @@
     "username": "Flo",
     "content": "Schau mal rüber",
     "timestamp": "2025-03-24T08:18:47.225Z"
+  },
+  {
+    "id": 9,
+    "username": "admin",
+    "content": "Welchen link benutzt du ",
+    "timestamp": "2025-03-24T08:19:30.172Z"
   }
 ]
