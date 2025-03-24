@@ -51,9 +51,12 @@
       "2025-03-23T08:31:23.988Z",
       "2025-03-23T08:34:07.088Z",
       "2025-03-23T09:16:16.882Z",
-      "2025-03-23T14:45:54.146Z"
+      "2025-03-23T14:45:54.146Z",
+      "2025-03-24T07:56:58.084Z",
+      "2025-03-24T08:05:20.157Z",
+      "2025-03-24T08:06:30.151Z"
     ],
-    "lastActivity": "2025-03-23T14:45:54.146Z",
+    "lastActivity": "2025-03-24T08:06:30.151Z",
     "verified": true,
     "sessionId": "iTKOIIsQcSKrz0B7YoviRxZmgR7dYbcI"
   },
@@ -64,10 +67,29 @@
   "adrian": {
     "password": "qwertzuiop",
     "role": "user",
+    "banned": true,
+    "group": null,
+    "tags": [
+      "Gebant"
+    ],
+    "notes": [
+      "Gebannt"
+    ],
+    "verified": true
+  },
+  "Flo": {
+    "password": "2025",
+    "role": "user",
     "banned": false,
     "group": null,
     "tags": [],
     "notes": [],
-    "verified": true
+    "verified": true,
+    "lastIp": "::ffff:127.0.0.1",
+    "loginHistory": [
+      "2025-03-24T08:04:16.527Z",
+      "2025-03-24T08:06:13.180Z"
+    ],
+    "lastActivity": "2025-03-24T08:06:13.180Z"
   }
 }
