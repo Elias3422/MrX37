@@ -58,9 +58,10 @@
       "2025-03-24T08:08:06.661Z",
       "2025-03-24T08:10:07.237Z",
       "2025-03-24T08:17:53.671Z",
-      "2025-03-24T08:20:06.320Z"
+      "2025-03-24T08:20:06.320Z",
+      "2025-03-31T12:35:15.832Z"
     ],
-    "lastActivity": "2025-03-24T08:20:06.320Z",
+    "lastActivity": "2025-03-31T12:35:15.833Z",
     "verified": true,
     "sessionId": "iTKOIIsQcSKrz0B7YoviRxZmgR7dYbcI"
   },
@@ -80,19 +81,5 @@
       "Gebannt"
     ],
     "verified": true
-  },
-  "Flo": {
-    "password": "2025",
-    "role": "user",
-    "banned": false,
-    "group": null,
-    "tags": [],
-    "notes": [],
-    "verified": true,
-    "lastIp": "::ffff:127.0.0.1",
-    "loginHistory": [
-      "2025-03-24T08:14:00.093Z"
-    ],
-    "lastActivity": "2025-03-24T08:18:47.225Z"
   }
 }
