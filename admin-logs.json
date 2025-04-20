@@ -1708,5 +1708,15 @@
     "timestamp": "2025-03-31T12:35:37.724Z",
     "action": "delete-user",
     "details": "Flo deleted"
+  },
+  {
+    "timestamp": "2025-04-20T11:53:53.886Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-04-20T11:54:00.141Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
   }
 ]
