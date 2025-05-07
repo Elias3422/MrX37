@@ -1718,5 +1718,70 @@
     "timestamp": "2025-04-20T11:54:00.141Z",
     "action": "clear-chat",
     "details": "Chat cleared"
+  },
+  {
+    "timestamp": "2025-05-07T11:51:23.586Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-05-07T11:51:53.274Z",
+    "action": "add-user",
+    "details": "1 added with role user and group none"
+  },
+  {
+    "timestamp": "2025-05-07T11:52:04.891Z",
+    "action": "login",
+    "details": "1 logged in"
+  },
+  {
+    "timestamp": "2025-05-07T11:53:09.868Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-05-07T11:55:01.975Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-05-07T11:57:56.217Z",
+    "action": "login",
+    "details": "1 logged in"
+  },
+  {
+    "timestamp": "2025-05-07T11:58:13.378Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-05-07T11:59:14.939Z",
+    "action": "add-user",
+    "details": " added with role user and group none"
+  },
+  {
+    "timestamp": "2025-05-07T11:59:34.968Z",
+    "action": "login",
+    "details": " logged in"
+  },
+  {
+    "timestamp": "2025-05-07T11:59:38.443Z",
+    "action": "login",
+    "details": " logged in"
+  },
+  {
+    "timestamp": "2025-05-07T11:59:52.296Z",
+    "action": "login",
+    "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-05-07T12:00:04.875Z",
+    "action": "delete-user",
+    "details": " deleted"
+  },
+  {
+    "timestamp": "2025-05-07T12:00:30.277Z",
+    "action": "clear-chat",
+    "details": "Chat cleared"
   }
 ]
