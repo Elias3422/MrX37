@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": 0,
+    "username": "1",
+    "content": "Hallo",
+    "timestamp": "2025-05-08T06:35:54.824Z"
+  },
+  {
+    "id": 1,
+    "username": "1",
+    "content": "",
+    "timestamp": "2025-05-08T06:36:29.040Z"
+  },
+  {
+    "id": 2,
+    "username": "1",
+    "content": "",
+    "timestamp": "2025-05-08T06:36:29.606Z"
+  },
+  {
+    "id": 3,
+    "username": "1",
+    "content": "",
+    "timestamp": "2025-05-08T06:36:29.829Z"
+  },
+  {
+    "id": 4,
+    "username": "1",
+    "content": "",
+    "timestamp": "2025-05-08T06:36:31.882Z"
+  },
+  {
+    "id": 5,
+    "username": "1",
+    "content": "",
+    "timestamp": "2025-05-08T06:36:32.099Z"
+  },
+  {
+    "id": 6,
+    "username": "1",
+    "content": "",
+    "timestamp": "2025-05-08T06:36:37.431Z"
+  },
+  {
+    "id": 7,
+    "username": "1",
+    "content": "",
+    "timestamp": "2025-05-08T06:36:38.587Z"
+  }
+]
