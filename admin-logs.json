@@ -1833,5 +1833,10 @@
     "timestamp": "2025-05-09T08:50:24.111Z",
     "action": "login",
     "details": "admin logged in"
+  },
+  {
+    "timestamp": "2025-05-09T10:09:38.603Z",
+    "action": "login",
+    "details": "admin logged in"
   }
 ]
