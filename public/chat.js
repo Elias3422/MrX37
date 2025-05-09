@@ -1,3 +1,7 @@
+// Um Erlaubnis für Benachrichtigungen bitten
+if (Notification.permission !== "granted") {
+  Notification.requestPermission();
+}
 function sendMessage() {
     const content = document.getElementById("message").value;
     fetch("/send-message", {
